@@ -1,0 +1,27 @@
+
+particles_pack.png
+size: 512,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+1111
+  rotate: false
+  xy: 2, 2
+  size: 247, 253
+  orig: 247, 253
+  offset: 0, 0
+  index: -1
+coins
+  rotate: false
+  xy: 260, 704
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+particles
+  rotate: false
+  xy: 2, 257
+  size: 256, 512
+  orig: 256, 512
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,110 @@
+
+card3_0.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2
+  rotate: false
+  xy: 2, 2
+  size: 989, 501
+  orig: 989, 501
+  offset: 0, 0
+  index: 0
+trj
+  rotate: false
+  xy: 2, 505
+  size: 511, 365
+  orig: 623, 463
+  offset: 91, 0
+  index: 0
+3
+  rotate: false
+  xy: 964, 672
+  size: 51, 79
+  orig: 51, 79
+  offset: 0, 0
+  index: 0
+5
+  rotate: false
+  xy: 515, 505
+  size: 383, 465
+  orig: 383, 465
+  offset: 0, 0
+  index: 0
+7
+  rotate: false
+  xy: 900, 505
+  size: 81, 83
+  orig: 81, 83
+  offset: 0, 0
+  index: 0
+8
+  rotate: false
+  xy: 900, 741
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: 0
+6
+  rotate: false
+  xy: 900, 590
+  size: 81, 80
+  orig: 81, 80
+  offset: 0, 0
+  index: 0
+9
+  rotate: false
+  xy: 900, 672
+  size: 62, 67
+  orig: 70, 77
+  offset: 4, 6
+  index: 0
+12
+  rotate: false
+  xy: 983, 505
+  size: 26, 26
+  orig: 27, 27
+  offset: 1, 1
+  index: 0
+
+card3_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fthfth
+  rotate: false
+  xy: 2, 537
+  size: 307, 455
+  orig: 343, 487
+  offset: 0, 0
+  index: 1
+1
+  rotate: false
+  xy: 311, 537
+  size: 384, 229
+  orig: 388, 230
+  offset: 3, 1
+  index: 1
+down
+  rotate: false
+  xy: 311, 828
+  size: 615, 58
+  orig: 615, 58
+  offset: 0, 0
+  index: 1
+up
+  rotate: false
+  xy: 311, 768
+  size: 708, 58
+  orig: 708, 58
+  offset: 0, 0
+  index: 1
+4
+  rotate: false
+  xy: 2, 2
+  size: 334, 533
+  orig: 334, 533
+  offset: 0, 0
+  index: 1

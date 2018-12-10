@@ -1,0 +1,122 @@
+[
+    {
+      "name": "Planet Mercury",
+      "text": "Overall Objective: Figure out how to operate the spaceship properly and get further away from the sun.",
+      "items": [
+        {"name": "Spaceship Owner`s Manual", "text": "Locate the book that will teach you how to control the ship."},
+        {"name": "Rocket Thruster Materials", "text": "Make repairs to the ship`s ignition system."},
+        {"name": "Heat Shield Upgrades", "text": "Make the ship safer to fly this close to the sun."},
+        {"name": "Glowing Crystal", "text": "Gather a souvenir of your trip to Mercury before you take off."},
+        {"name": "Navigation Charts", "text": "Plan a safe course to the next planet in the solar system."},
+        {"name": "Ignition Key", "text": "Time to star your next adventure! If you could only find those darn keys…"}
+      ]
+    },
+    {
+      "name": "Planet Venus",
+      "text": "Overall Objective: Make a quick pitstop to do some sightseeing before heading back to Earth.",
+      "items": [
+        {"name": "Landing Gear Upgrade", "text": "Reduce the bumps and jolts of landing on future rocky planets."},
+        {"name": "Thermal Safety Suit", "text": "Protect your body from the 800º temperatures on Venus."},
+        {"name": "Photo of Earth", "text": "Take a snapshot of home from Earth`s nearest neighbor."},
+        {"name": "Navigation Upgrade", "text": "Plan a secret course to Earth to avoid being noticed."},
+        {"name": "Cloaking Device", "text": "Disguise your ship so you can return to Earth without getting caught."},
+        {"name": "Ignition Key", "text": "Let`s set a course for Earth! You know where you left the key, right?"}
+      ]
+    },
+    {
+      "name": "Planet Earth",
+      "text": "Overall Objective: Stock up on the supplies you need to continue your space odyssey (without getting caught, of course).",
+      "items": [
+        {"name": "Tasty Snacks", "text": "Time to get some real grub – you`ve been eating freeze-dried astronaut food for weeks!"},
+        {"name": "Photo Album", "text": "You didn`t realize how lonely it would be in space. Your album will help you fight homesickness as you continue your journey."},
+        {"name": "Additional Rocket Fuel", "text": "Gas up your ship for more deep space adventures."},
+        {"name": "New Spacesuit", "text": "Get a fresh, clean outfit to replace the stinky one you`ve been wearing since you left."},
+        {"name": "Satellite Map", "text": "See where all the manmade satellites are so you can take off safely."},
+        {"name": "Ignition Key", "text": "Time to continue to the next planet. Please tell me you didn`t leave the keys in your old spacesuit!"}
+      ]
+    },
+    {
+      "name": "Planet Mars",
+      "text": "Overall Objective: Explore the mysterious Red Planet and search for life.",
+      "items": [
+        {"name": "Windshield Wipers", "text": "Clean all that filthy Martian dust off the front of your spaceship."},
+        {"name": "Martial Soil Sample", "text": "Collect some of that famous red dirt to bring back home."},
+        {"name": "Water Detector", "text": "Search Mars to see if you can find any liquid water."},
+        {"name": "Lifeform Scanner", "text": "Oxygen Tanks"},
+        {"name": "Scientific Scale", "text": "Hydrogen Tanks"},
+        {"name": "Ignition Key", "text": "Next stop: Jupiter! All we need to do is fire up the engines."}
+      ]
+    },
+    {
+      "name": "Planet Jupiter",
+      "text": "Overall Objective: Get up close and personal with the solar system`s biggest planet.",
+      "items": [
+        {"name": "Rocket Belt", "text": "Suit up to explore a gas giant with no solid ground."},
+        {"name": "Gas Analyzer", "text": "Study the composition of the various gasses that make up the planet Jupiter."},
+        {"name": "Moon Map", "text": "Identify and take in Jupiter`s 79 different moons."},
+        {"name": "Great Red Spot Photo", "text": "Take a picture of the solar system`s biggest freckle: the Great Red Spot of Jupiter."},
+        {"name": "Anti-Gravity Upgrades", "text": "Soup up your spaceship so it can fight Jupiter`s strong gravity."},
+        {"name": "Ignition Key", "text": "Time to take in one of the most beautiful sights in the whole solar system. We`ll need those keys to get there, though."}
+      ]
+    },
+    {
+      "name": "Planet Saturn",
+      "text": "Overall Objective: Get a close look at one of the great natural wonders of the solar system, but be careful!",
+      "items": [
+        {"name": "Dent Repair Kit", "text": "Fix the dings that the rocks in Saturn`s rings will make on your ship."},
+        {"name": "Gas Mask", "text": "Protect yourself from the ammonia gas of Saturn`s atmosphere."},
+        {"name": "Ring Stone Sample", "text": "Gather some rocks from Saturn`s rings to create an out-of-this-world souvenir."},
+        {"name": "Precision Measuring Equipment", "text": "Document the size of the solar system`s second largest planet."},
+        {"name": "Magnetometer", "text": "Monitor the planet Saturn`s strong magnetic field to make sure it won`t mess with the ship!"},
+        {"name": "Ignition Keys", "text": "Next up, the ice giant Uranus. You know where the keys are, right?"}
+      ]
+    },
+    {
+      "name": "Planet Uranus",
+      "text": "Overall Objective: Survive the cold temperatures of Uranus to continue your journey toward the outer solar system.",
+      "items": [
+        {"name": "Spaceship Insulation", "text": "Prepare your ship`s engine (and yourself!) for the extreme cold of the ice giants."},
+        {"name": "Thermal Spacesuit", "text": "Get your heavy duty equipment ready for extreme conditions."},
+        {"name": "Funny Joke Book", "text": "Make sure to tell all your favorite “Uranus” jokes while you visit!"},
+        {"name": "Mapping Equipment", "text": "Study Uranus` irregular orbit to see just how different it is from Earth."},
+        {"name": "High-Powered Telescope", "text": "Take a look back at Earth to see how tiny your home planet looks from Uranus."},
+        {"name": "Ignition Key", "text": "Just two planets left! You know the routine…"}
+      ]
+    },
+    {
+      "name": "Planet Neptune",
+      "text": "Overall Objective: Prepare yourself for the journey through the dangerous Kuiper Belt.",
+      "items": [
+        {"name": "Heated Helmet", "text": "Prepare yourself to withstand Neptune`s -350º temperatures!"},
+        {"name": "Laser Measuring System", "text": "Calculate Neptune`s distance from Mercury to see how far you have come."},
+        {"name": "Motorized Ice Auger", "text": "Dig down through miles of ice to reach Neptune`s rocky core."},
+        {"name": "Gas Collection Tank", "text": "Capture some samples from Neptune`s atmosphere to analyze when you return to Earth."},
+        {"name": "Armor Plating", "text": "Beef up your ship`s defenses to protect it from the meteors and comets of the Kuiper Belt."},
+        {"name": "Ignition Keys", "text": "We`re on our way to planet number nine: Pluto. We can`t get anywhere without those keys, though!"}
+      ]
+    },
+    {
+      "name": "Planet Pluto",
+      "text": "Overall Objective: Explore the final planet in our solar system and prepare to return home.",
+      "items": [
+        {"name": "Space Pedometer", "text": "Determine how many steps it would take to walk all the way around our smallest planet."},
+        {"name": "Communication System Repairs", "text": "Fix your communication system so you can tell your scientist colleagues on Earth that you`re coming home."},
+        {"name": "Navigation System Update", "text": "Chart a course back to Earth using the most up-to-date map of the solar system."},
+        {"name": "Spare Spaceship Parts", "text": "If you`re going to get back to Earth, you`ll need to repair all the damage and wear on your ship."},
+        {"name": "Hyper-shot Positioning System", "text": "Install this special software to guarantee your ship gets the boost it needs to get back home."},
+        {"name": "Ignition Keys", "text": "Just grab those keys, and away we go!!!"}
+      ]
+    },
+    {
+      "name": "{WAVE=0.5;0.5;1;4}Planet - {WAIT} Mercury{ENDWAVE}",
+      "text": "Is the smallest and innermost planet in the {COLOR=YELLOW}Solar System.{CLEARCOLOR} Its orbital period around the {COLOR=YELLOW}Sun{CLEARCOLOR} of 87.97 days is the shortest of all the planets in the {COLOR=YELLOW}Solar System.",
+      "items": [
+        {"name": "First item", "text": "First item text. \n Test text for planet 1, item 1"},
+        {"name": "Second item", "text": "Second item text. \n Test text for planet 1, item 2"},
+        {"name": "Third item", "text": "Third item text. \n Test text for planet 1, item 3"},
+        {"name": "Fourth item", "text": "Fourth item text. \n Test text for planet 1, item 4"},
+        {"name": "Fifth item", "text": "Fifth item text. \n Test text for planet 1, item 5"},
+        {"name": "Sixth item", "text": "Sixth item text. \n Test text for planet 1, item 6"}
+      ]
+    }
+  ]

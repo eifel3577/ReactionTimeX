@@ -1,0 +1,75 @@
+
+screen_2_0.png
+size: 1600,2172
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fon_comics
+  rotate: false
+  xy: 2, 2
+  size: 1596, 2168
+  orig: 1596, 2168
+  offset: 0, 0
+  index: 0
+
+screen_2_1.png
+size: 1600,2172
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+yearth
+  rotate: false
+  xy: 2, 2
+  size: 1034, 957
+  orig: 1034, 957
+  offset: 0, 0
+  index: 1
+sun
+  rotate: false
+  xy: 897, 961
+  size: 643, 422
+  orig: 643, 422
+  offset: 0, 0
+  index: 1
+star
+  rotate: false
+  xy: 1355, 123
+  size: 83, 80
+  orig: 83, 80
+  offset: 0, 0
+  index: 1
+luna
+  rotate: false
+  xy: 1038, 2
+  size: 315, 243
+  orig: 315, 243
+  offset: 0, 0
+  index: 1
+fon text
+  rotate: false
+  xy: 2, 961
+  size: 893, 542
+  orig: 914, 563
+  offset: 10, 11
+  index: 1
+2
+  rotate: false
+  xy: 1440, 185
+  size: 90, 45
+  orig: 90, 45
+  offset: 0, 0
+  index: 1
+1
+  rotate: false
+  xy: 1355, 2
+  size: 238, 119
+  orig: 238, 119
+  offset: 0, 0
+  index: 1
+3
+  rotate: false
+  xy: 1440, 123
+  size: 83, 60
+  orig: 83, 60
+  offset: 0, 0
+  index: 1

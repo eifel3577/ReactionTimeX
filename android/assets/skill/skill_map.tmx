@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="53">
+ <tileset firstgid="1" source="buy_shop.tsx"/>
+ <tileset firstgid="2" source="../game/back/skill_count_back.tsx"/>
+ <tileset firstgid="3" source="bottom_dec_buySkill.tsx"/>
+ <tileset firstgid="4" source="buy_dec_buySkill.tsx"/>
+ <tileset firstgid="5" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="6" source="../buy/buy_top_btn.tsx"/>
+ <objectgroup name="menu_bg">
+  <object id="39" name="buy_shop" type="menu" gid="1" x="101.944" y="1533.98" width="883" height="314"/>
+  <object id="49" name="buy" type="bg" gid="4" x="25.9958" y="1132.01" width="1020" height="182"/>
+ </objectgroup>
+ <objectgroup name="bottom_back">
+  <object id="47" name="bottom" type="bg" gid="3" x="-0.00018657" y="2160" width="1080" height="841"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="51" name="head_bg" type="top" gid="5" x="-79.36" y="536" width="1215.36" height="540"/>
+  <object id="52" name="top_btn" type="back" gid="6" x="2.5" y="511.58" width="1075" height="261"/>
+ </objectgroup>
+ <objectgroup name="top_btn">
+  <object id="33" name="video" type="btn" x="262.657" y="-1.45171" width="228.49" height="523.23"/>
+  <object id="34" name="back" type="btn" x="19.6356" y="-1.19571" width="205.284" height="533.935"/>
+ </objectgroup>
+ <objectgroup name="top_txt">
+  <object id="18" name="coins" type="text" x="753.068" y="300.13" width="219.968" height="76.0085">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="top_anim">
+  <object id="50" name="gift_menu" type="anim" x="262.523" y="264.88" width="233.402" height="178.196"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="29" name="shop" type="btn" x="118.016" y="1246.87" width="853.003" height="261.428"/>
+  <object id="30" name="buy_1" type="btn" x="16.0655" y="1025.43" width="328.454" height="114.245"/>
+  <object id="31" name="buy_2" type="btn" x="364.156" y="1022.76" width="328.454" height="116.029"/>
+  <object id="32" name="buy_3" type="btn" x="714.031" y="1028.11" width="328.454" height="108.889"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="40" name="Skill_flash" type="anim" x="57.1536" y="659.999" width="264.948" height="292.007"/>
+  <object id="41" name="Skill_bomb" type="anim" x="396.637" y="659.999" width="264.948" height="292.007"/>
+  <object id="42" name="skill_ice" type="anim" x="751.499" y="659.999" width="264.948" height="292.007"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="43" name="back_txt_1" type="back" gid="2" x="78.0644" y="940.005" width="71" height="71"/>
+  <object id="44" name="back_txt_2" type="back" gid="2" x="427.563" y="939.572" width="71" height="71"/>
+  <object id="45" name="back_txt_3" type="back" gid="2" x="778.421" y="939.572" width="71" height="71"/>
+  <object id="24" name="price_1" type="text" x="65.267" y="965.961" width="234.34" height="61.7736">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+  <object id="26" name="price_2" type="text" x="403.985" y="965.142" width="234.34" height="61.7736">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+  <object id="28" name="price_3" type="text" x="763.44" y="965.259" width="234.34" height="61.7736">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+  <object id="36" name="count_1" type="text" x="78.9998" y="864.999" width="71.3597" height="76.0085">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">999</text>
+  </object>
+  <object id="37" name="count_2" type="text" x="428.267" y="864.999" width="71.3597" height="76.0085">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">999</text>
+  </object>
+  <object id="38" name="count_3" type="text" x="778.628" y="864.999" width="71.3597" height="76.0085">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">999</text>
+  </object>
+ </objectgroup>
+</map>

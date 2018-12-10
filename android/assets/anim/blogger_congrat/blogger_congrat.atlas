@@ -1,0 +1,102 @@
+
+blogger_congrat_0.png
+size: 1062,1049
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fon
+  rotate: false
+  xy: 2, 2
+  size: 1045, 1032
+  orig: 1058, 1045
+  offset: 9, 6
+  index: 0
+
+blogger_congrat_1.png
+size: 1062,1049
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10
+  rotate: false
+  xy: 2, 2
+  size: 470, 503
+  orig: 470, 503
+  offset: 0, 0
+  index: 1
+11
+  rotate: false
+  xy: 474, 2
+  size: 364, 443
+  orig: 368, 447
+  offset: 3, 2
+  index: 1
+5
+  rotate: false
+  xy: 474, 447
+  size: 42, 45
+  orig: 42, 45
+  offset: 0, 0
+  index: 1
+9
+  rotate: false
+  xy: 840, 2
+  size: 151, 339
+  orig: 151, 339
+  offset: 0, 0
+  index: 1
+3
+  rotate: false
+  xy: 569, 447
+  size: 231, 311
+  orig: 231, 311
+  offset: 0, 0
+  index: 1
+8
+  rotate: false
+  xy: 802, 447
+  size: 169, 315
+  orig: 169, 315
+  offset: 0, 0
+  index: 1
+4
+  rotate: false
+  xy: 569, 760
+  size: 107, 186
+  orig: 107, 186
+  offset: 0, 0
+  index: 1
+6
+  rotate: false
+  xy: 678, 760
+  size: 98, 153
+  orig: 98, 153
+  offset: 0, 0
+  index: 1
+1
+  rotate: false
+  xy: 2, 507
+  size: 565, 286
+  orig: 565, 286
+  offset: 0, 0
+  index: 1
+
+blogger_congrat_2.png
+size: 1062,1049
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2
+  rotate: false
+  xy: 2, 2
+  size: 546, 271
+  orig: 546, 271
+  offset: 0, 0
+  index: 2
+7
+  rotate: false
+  xy: 550, 2
+  size: 110, 346
+  orig: 110, 346
+  offset: 0, 0
+  index: 2

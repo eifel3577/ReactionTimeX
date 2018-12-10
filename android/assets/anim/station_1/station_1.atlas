@@ -1,0 +1,48 @@
+
+station_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 711, 233
+  size: 149, 285
+  orig: 158, 289
+  offset: 8, 3
+  index: -1
+4444
+  rotate: false
+  xy: 449, 2
+  size: 260, 272
+  orig: 273, 279
+  offset: 8, 2
+  index: -1
+4
+  rotate: false
+  xy: 2, 2
+  size: 445, 186
+  orig: 445, 186
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 711, 2
+  size: 218, 229
+  orig: 218, 229
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 862, 233
+  size: 92, 227
+  orig: 92, 227
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 931, 2
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,62 @@
+
+done_planet_button.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow2
+  rotate: false
+  xy: 1, 1
+  size: 897, 591
+  orig: 1051, 742
+  offset: 76, 75
+  index: -1
+123123123
+  rotate: false
+  xy: 551, 594
+  size: 400, 225
+  orig: 400, 225
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 551, 821
+  size: 136, 132
+  orig: 136, 132
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 917, 821
+  size: 106, 95
+  orig: 106, 95
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 689, 821
+  size: 116, 126
+  orig: 116, 127
+  offset: 0, 1
+  index: -1
+5
+  rotate: false
+  xy: 917, 918
+  size: 98, 75
+  orig: 98, 75
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 807, 821
+  size: 108, 110
+  orig: 108, 110
+  offset: 0, 0
+  index: -1
+234234
+  rotate: false
+  xy: 1, 594
+  size: 548, 285
+  orig: 600, 339
+  offset: 25, 29
+  index: -1

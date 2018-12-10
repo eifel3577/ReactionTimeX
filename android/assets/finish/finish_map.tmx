@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="19">
+ <tileset firstgid="1" source="game_finish_bg.tsx"/>
+ <tileset firstgid="2" source="finish_center.tsx"/>
+ <tileset firstgid="3" source="../game/game_elements/game_element_1.tsx"/>
+ <tileset firstgid="5" source="../shop/planets.tsx"/>
+ <layer name="back" width="36" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAIA6D5/9P2JZsFLiABAAAAAAAAAACu5jtQFiSQAAI=
+  </data>
+ </layer>
+ <objectgroup name="menu_bg">
+  <object id="12" name="menu" type="back" gid="2" x="95.6471" y="1480.8" width="887" height="689"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="13" name="solar" type="btn" x="111.299" y="1589.64" width="849.262" height="237.116"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="5" name="score" type="text" x="495.012" y="1298.19" width="298.274" height="105">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="72"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="game_el">
+  <object id="15" name="element_game" type="element" gid="3" x="199.649" y="1471.79" width="231" height="230"/>
+ </objectgroup>
+ <objectgroup name="elements">
+  <object id="18" name="planets" type="planet" gid="5" x="229.953" y="780.974" width="940.5" height="714"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="16" name="Finish" type="anim" x="308.286" y="879.431" width="474.298" height="79.4636"/>
+  <object id="17" name="button_finish" type="anim" x="0" y="1591.91" width="1080" height="249.181"/>
+ </objectgroup>
+</map>

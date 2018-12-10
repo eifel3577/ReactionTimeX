@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="39">
+ <tileset firstgid="2" source="../level_select/bottom_btn.tsx"/>
+ <tileset firstgid="3" source="buy_2_el.tsx"/>
+ <tileset firstgid="5" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="6" source="buy_top_btn.tsx"/>
+ <objectgroup name="top_back">
+  <object id="36" name="head_bg" type="top" gid="5" x="-79.36" y="496" width="1215.36" height="540"/>
+  <object id="37" name="top_btn" type="back" gid="6" x="2.5" y="471.58" width="1075" height="261"/>
+ </objectgroup>
+ <objectgroup name="top_btn">
+  <object id="32" name="back" type="btn" x="18.0214" y="219.913" width="216.622" height="212.202"/>
+  <object id="33" name="video" type="btn" x="252.328" y="228.925" width="227.675" height="201.149"/>
+ </objectgroup>
+ <objectgroup name="menu_bg">
+  <object id="34" name="menu_back" type="back" gid="3" x="112.959" y="1871.05" width="854" height="1026"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="27" name="buy_1" type="btn" x="106.099" y="879.129" width="395.668" height="479.664"/>
+  <object id="29" name="buy_2" type="btn" x="574.711" y="876.918" width="389.036" height="481.875"/>
+  <object id="30" name="buy_3" type="btn" x="104.993" y="1401.9" width="395.668" height="479.664"/>
+  <object id="31" name="buy_4" type="btn" x="575.816" y="1399.69" width="395.668" height="479.664"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="5" name="pack_1" type="text" x="106.642" y="1131.63" width="246.251" height="87.1054">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">1500/</text>
+  </object>
+  <object id="6" name="pack_2" type="text" x="590.505" y="1125.42" width="207.243" height="102.43">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">1500/</text>
+  </object>
+  <object id="7" name="pack_3" type="text" x="104.683" y="1660.73" width="254.61" height="78.7465">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">200/</text>
+  </object>
+  <object id="8" name="pack_4" type="text" x="589.428" y="1655.68" width="218.388" height="82.926">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">200/</text>
+  </object>
+  <object id="18" name="coins" type="text" x="742.419" y="250.134" width="235.673" height="99.7279">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+  <object id="23" name="price_1" type="text" x="245.052" y="1138.68" width="246.251" height="87.1054">
+   <properties>
+    <property name="color" type="color" value="#ff5ab413"/>
+    <property name="size" type="int" value="49"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#5ab413" bold="1" halign="center" valign="center">29$</text>
+  </object>
+  <object id="24" name="price_2" type="text" x="708.733" y="1138.3" width="246.251" height="87.1054">
+   <properties>
+    <property name="color" type="color" value="#ff5ab413"/>
+    <property name="size" type="int" value="49"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#5ab413" bold="1" halign="center" valign="center">9$</text>
+  </object>
+  <object id="25" name="price_3" type="text" x="222.197" y="1661.11" width="246.251" height="87.1054">
+   <properties>
+    <property name="color" type="color" value="#ff5ab413"/>
+    <property name="size" type="int" value="49"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#5ab413" bold="1" halign="center" valign="center">9$</text>
+  </object>
+  <object id="26" name="price_4" type="text" x="690.044" y="1660.1" width="246.251" height="87.1054">
+   <properties>
+    <property name="color" type="color" value="#ff5ab413"/>
+    <property name="size" type="int" value="49"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="48" wrap="1" color="#5ab413" bold="1" halign="center" valign="center">9$</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="38" name="watch_video" type="anim" x="266.023" y="257.91" width="182.379" height="131.874"/>
+ </objectgroup>
+</map>

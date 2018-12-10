@@ -1,0 +1,110 @@
+
+loader_blogger_0.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+345345
+  rotate: false
+  xy: 753, 507
+  size: 187, 304
+  orig: 188, 306
+  offset: 1, 1
+  index: 0
+10
+  rotate: false
+  xy: 469, 775
+  size: 145, 229
+  orig: 145, 229
+  offset: 0, 0
+  index: 0
+6
+  rotate: false
+  xy: 753, 2
+  size: 224, 503
+  orig: 224, 503
+  offset: 0, 0
+  index: 0
+9
+  rotate: false
+  xy: 214, 2
+  size: 343, 462
+  orig: 343, 462
+  offset: 0, 0
+  index: 0
+4
+  rotate: false
+  xy: 469, 466
+  size: 63, 68
+  orig: 63, 68
+  offset: 0, 0
+  index: 0
+8
+  rotate: false
+  xy: 559, 2
+  size: 192, 771
+  orig: 192, 771
+  offset: 0, 0
+  index: 0
+3
+  rotate: false
+  xy: 214, 466
+  size: 253, 555
+  orig: 253, 555
+  offset: 0, 0
+  index: 0
+2
+  rotate: false
+  xy: 2, 774
+  size: 147, 227
+  orig: 147, 227
+  offset: 0, 0
+  index: 0
+7
+  rotate: false
+  xy: 2, 2
+  size: 210, 770
+  orig: 210, 770
+  offset: 0, 0
+  index: 0
+11111
+  rotate: false
+  xy: 616, 775
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: 0
+2222
+  rotate: false
+  xy: 728, 775
+  size: 5, 47
+  orig: 5, 47
+  offset: 0, 0
+  index: 0
+
+loader_blogger_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 148, 2
+  size: 160, 277
+  orig: 160, 277
+  offset: 0, 0
+  index: 1
+5
+  rotate: false
+  xy: 2, 2
+  size: 144, 537
+  orig: 144, 537
+  offset: 0, 0
+  index: 1
+23422222
+  rotate: false
+  xy: 2, 541
+  size: 158, 313
+  orig: 158, 313
+  offset: 0, 0
+  index: 1

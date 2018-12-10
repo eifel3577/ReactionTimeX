@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="34">
+ <tileset firstgid="1" source="stat_back_menu.tsx"/>
+ <tileset firstgid="2" source="back_bottom.tsx"/>
+ <tileset firstgid="3" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="4" source="stats_top_btn.tsx"/>
+ <objectgroup name="bottom_back">
+  <object id="30" name="bttm_back" gid="2" x="0.00105738" y="2160" width="1080" height="252"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="32" name="head_bg" type="top" gid="3" x="-79.36" y="536" width="1215.36" height="540"/>
+  <object id="33" name="top_btn" type="back" gid="4" x="0" y="511.58" width="1080" height="263"/>
+ </objectgroup>
+ <objectgroup name="top_btn">
+  <object id="22" name="back" type="btn" x="21.5412" y="-24.805" width="201.041" height="545.269"/>
+  <object id="23" name="video" type="btn" x="292.588" y="19.8895" width="236.941" height="480.297"/>
+  <object id="24" name="gift" type="btn" x="603.124" y="12.7095" width="184.886" height="470.637"/>
+  <object id="25" name="market" type="btn" x="857.49" y="-24.9172" width="197.451" height="544.395"/>
+ </objectgroup>
+ <objectgroup name="top_anim">
+  <object id="31" name="gift_menu" type="anim" x="293.136" y="264.88" width="233.402" height="151.677"/>
+ </objectgroup>
+ <objectgroup name="menu_bg">
+  <object id="17" name="menu_bg" type="menu" gid="1" x="-0.252386" y="1494.36" width="1080" height="960"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="26" name="shop" type="btn" x="831.091" y="1214.69" width="183.091" height="195.656"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="4" name="coins" type="text" x="618.222" y="1275.56" width="227.576" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="9" name="player_name" type="text" x="379.659" y="678.329" width="460.496" height="60">
+   <properties>
+    <property name="color" type="color" value="#ff7c55fb"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#f5fcf6" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="18" name="levels" type="text" x="136.462" y="1042.92" width="227.576" height="60">
+   <properties>
+    <property name="color" type="color" value="#ff5bb313"/>
+    <property name="size" type="int" value="65"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#5bb313" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="19" name="all_points" type="text" x="414.101" y="1041.67" width="227.576" height="60">
+   <properties>
+    <property name="color" type="color" value="#fffee421"/>
+    <property name="size" type="int" value="66"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#fee421" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="20" name="items" type="text" x="688.006" y="1041.67" width="227.576" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffe90e73"/>
+    <property name="size" type="int" value="67"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#e90e73" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="21" name="best_score" type="text" x="173.139" y="1276.98" width="276.233" height="60">
+   <properties>
+    <property name="color" type="color" value="#ff7c55fb"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#f5fcf6" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+</map>

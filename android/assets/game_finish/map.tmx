@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="25">
+ <tileset firstgid="1" source="game_finish_back.tsx"/>
+ <layer name="back" width="36" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAIA6D5/9P2JZsFLiABAAAAAAAAAACu5jtQFiSQAAI=
+  </data>
+ </layer>
+ <objectgroup name="btn">
+  <object id="17" name="game_over_finish" type="btn" x="220.699" y="1223.13" width="664.641" height="223.505"/>
+  <object id="19" name="market" type="btn" x="862.465" y="15.3433" width="205.011" height="185.923"/>
+  <object id="21" name="watch_video" type="btn" x="220.553" y="19.6645" width="205.011" height="185.923"/>
+  <object id="22" name="back" type="btn" x="7.15662" y="16.7006" width="205.011" height="185.923"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="24" name="coins" type="text" x="514.791" y="64.8605" width="262.635" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+</map>

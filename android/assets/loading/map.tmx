@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="7">
+ <tileset firstgid="1" source="load_bar.tsx"/>
+ <tileset firstgid="6" source="logo.tsx"/>
+ <tileset firstgid="7" source="loading_bottom.tsx"/>
+ <objectgroup name="top_back">
+  <object id="6" gid="6" x="0" y="930" width="1080" height="800"/>
+ </objectgroup>
+ <objectgroup name="bottom_back">
+  <object id="5" name="bottom" type="back" gid="7" x="-1345.86" y="2233.51" width="3321" height="1097"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="1" name="loading" type="loading" gid="1" x="440" y="2098.48" width="195" height="27"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="2" name="loader_blogger" type="anim" x="0" y="74.7043" width="1080" height="1920"/>
+ </objectgroup>
+</map>

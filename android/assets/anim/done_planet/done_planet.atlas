@@ -1,0 +1,102 @@
+
+done_planet_0.png
+size: 1300,1300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2
+  rotate: false
+  xy: 901, 672
+  size: 90, 307
+  orig: 90, 307
+  offset: 0, 0
+  index: 0
+shadow2
+  rotate: false
+  xy: 2, 672
+  size: 897, 591
+  orig: 1051, 742
+  offset: 76, 75
+  index: 0
+8
+  rotate: false
+  xy: 901, 981
+  size: 136, 132
+  orig: 136, 132
+  offset: 0, 0
+  index: 0
+7
+  rotate: false
+  xy: 1129, 1115
+  size: 106, 95
+  orig: 106, 95
+  offset: 0, 0
+  index: 0
+6
+  rotate: false
+  xy: 901, 1115
+  size: 116, 126
+  orig: 116, 127
+  offset: 0, 1
+  index: 0
+5
+  rotate: false
+  xy: 1129, 1212
+  size: 98, 75
+  orig: 98, 75
+  offset: 0, 0
+  index: 0
+4
+  rotate: false
+  xy: 1019, 1115
+  size: 108, 110
+  orig: 108, 110
+  offset: 0, 0
+  index: 0
+next
+  rotate: false
+  xy: 2, 2
+  size: 995, 668
+  orig: 1012, 686
+  offset: 5, 10
+  index: 0
+
+done_planet_1.png
+size: 1300,1300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3
+  rotate: false
+  xy: 704, 185
+  size: 400, 225
+  orig: 400, 225
+  offset: 0, 0
+  index: 1
+1
+  rotate: false
+  xy: 2, 2
+  size: 700, 690
+  orig: 700, 690
+  offset: 0, 0
+  index: 1
+planet_name
+  rotate: false
+  xy: 704, 2
+  size: 498, 181
+  orig: 500, 183
+  offset: 1, 1
+  index: 1
+
+done_planet_2.png
+size: 1300,1300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 2, 2
+  size: 686, 681
+  orig: 700, 693
+  offset: 14, 12
+  index: 2

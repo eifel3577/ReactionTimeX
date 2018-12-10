@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="41">
+ <tileset firstgid="1" source="rating_menu_back.tsx"/>
+ <tileset firstgid="2" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="3" source="../buy/buy_top_btn.tsx"/>
+ <objectgroup name="menu_bg">
+  <object id="37" name="menu_bg" type="back" gid="1" x="2.35808" y="2143.88" width="1077" height="1639"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="38" name="head_bg" type="top" gid="2" x="-79.36" y="536" width="1215.36" height="540" visible="0"/>
+  <object id="40" name="top_btn" type="back" gid="3" x="2.5" y="511.58" width="1075" height="261"/>
+ </objectgroup>
+ <objectgroup name="top_btn">
+  <object id="21" name="watch_video" type="btn" x="263.007" y="14.8751" width="205.011" height="493.07"/>
+  <object id="22" name="back" type="btn" x="29.5328" y="-4.33163" width="205.011" height="525.557"/>
+ </objectgroup>
+ <objectgroup name="top_txt">
+  <object id="24" name="coins" type="text" x="731.763" y="310.13" width="262.635" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="28" name="result_1" type="result" x="827" y="589.609" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="29" name="result_2" type="result" x="827" y="821.74" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="30" name="result_3" type="result" x="827" y="1053.36" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="31" name="result_4" type="result" x="827" y="1283.34" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="32" name="result_5" type="result" x="827" y="1512.13" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="33" name="result_6" type="result" x="827" y="1744.69" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="34" name="result_7" type="result" x="827" y="1979.8" width="155.415" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="36" name="name_7" type="name" x="485.392" y="1980.2" width="304.834" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="39" name="watch_video" type="anim" x="272.83" y="277.91" width="180.184" height="144.118"/>
+ </objectgroup>
+</map>

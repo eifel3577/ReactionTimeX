@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="24">
+ <tileset firstgid="1" source="game_over_back.tsx"/>
+ <tileset firstgid="2" source="../game/game_elements/game_element_1.tsx"/>
+ <layer name="back" width="36" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAIA6D5/9P2JZsFLiABAAAAAAAAAACu5jtQFiSQAAI=
+  </data>
+ </layer>
+ <objectgroup name="btn">
+  <object id="17" name="game_over_finish" type="btn" x="25.0855" y="1575.83" width="1026.23" height="282.782"/>
+  <object id="19" name="watch_video" type="btn" x="392.907" y="864.554" width="296.89" height="221.489"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="21" name="game_over" type="anim" x="328.165" y="534.397" width="424.507" height="72.2565"/>
+  <object id="22" name="100_continue" type="anim" x="270.772" y="882.132" width="532.392" height="182.147"/>
+  <object id="23" name="button_finish" type="anim" x="0" y="1586.99" width="1080" height="249.181"/>
+ </objectgroup>
+</map>

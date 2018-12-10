@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="46">
+ <objectgroup name="btn"/>
+ <objectgroup name="anim">
+  <object id="25" name="anim_2" type="anim" x="28.0422" y="868.229" width="503.669" height="238.422"/>
+  <object id="38" name="anim" type="anim" x="-1" y="0" width="1080" height="1920"/>
+ </objectgroup>
+ <objectgroup name="menu_text">
+  <object id="40" name="element_text_1" type="text" x="152.787" y="118.773" width="736.09" height="345.211">
+   <properties>
+    <property name="color" type="color" value="#ff351f59"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#fffffe" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+  <object id="42" name="element_text_2" type="text" x="179.228" y="1510.15" width="736.09" height="267.827">
+   <properties>
+    <property name="color" type="color" value="#ff351f59"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#fffffe" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+  <object id="43" name="element_text_3" type="text" x="69.2086" y="1405.77" width="736.09" height="352.176">
+   <properties>
+    <property name="color" type="color" value="#ff351f59"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#fffffe" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+  <object id="45" name="element_text_4" type="text" x="129.712" y="145.245" width="809.445" height="289.728">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#fffffe" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+ </objectgroup>
+</map>

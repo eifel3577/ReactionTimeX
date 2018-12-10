@@ -1,0 +1,20 @@
+
+button_start.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Слой x00201 1
+  rotate: false
+  xy: 1, 1
+  size: 948, 362
+  orig: 948, 362
+  offset: 0, 0
+  index: -1
+2710325516016
+  rotate: false
+  xy: 1, 365
+  size: 992, 138
+  orig: 992, 138
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.2" orientation="orthogonal" renderorder="left-up" width="10" height="18" tilewidth="107" tileheight="107" infinite="0" nextobjectid="19">
+ <tileset firstgid="1" source="HOME.tsx"/>
+ <tileset firstgid="2" source="HOME_1.tsx"/>
+ <tileset firstgid="3" source="home_back.tsx"/>
+ <tileset firstgid="4" source="../robo_anim.tsx"/>
+ <tileset firstgid="8" source="../game/1.tsx"/>
+ <tileset firstgid="9" source="../textures/lg_btn.tsx"/>
+ <tileset firstgid="19" source="HOME_2.tsx"/>
+ <tileset firstgid="20" source="../loading/loading.tsx"/>
+ <layer name="back_gr" width="10" height="18" visible="0">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+2,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="back" width="10" height="18">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+19,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="buttons">
+  <object id="5" name="share" type="btn" x="682" y="39" width="150" height="154"/>
+  <object id="6" name="stars" type="btn" x="69" y="40" width="502" height="156">
+   <properties>
+    <property name="type" value="stats"/>
+   </properties>
+  </object>
+  <object id="7" name="settings" type="btn" x="899" y="39" width="150" height="154">
+   <properties>
+    <property name="type" value="settings"/>
+   </properties>
+  </object>
+  <object id="8" name="in-app" type="btn" x="68" y="258" width="302" height="156"/>
+  <object id="10" name="play" type="play" gid="10" x="114" y="1198" width="869" height="215"/>
+  <object id="14" name="robo" type="anim" gid="4" x="437" y="433" width="158" height="99"/>
+  <object id="15" name="ts" gid="12" x="120" y="1443" width="869" height="215"/>
+  <object id="16" name="ts" gid="14" x="129" y="1683" width="869" height="215"/>
+  <object id="17" name="tsts" gid="16" x="136" y="1910" width="869" height="215"/>
+  <object id="18" name="tst" gid="18" x="93" y="817" width="869" height="215"/>
+ </objectgroup>
+</map>

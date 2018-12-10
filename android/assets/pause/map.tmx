@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="15">
+ <tileset firstgid="1" source="../game/pause_background.tsx"/>
+ <tileset firstgid="2" source="pause_back.tsx"/>
+ <layer name="back" width="36" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzqENAAAIA7CF/4/GT+Ew7QVNAAAAAAAAAACAq/kOlAUlIAAD
+  </data>
+ </layer>
+ <objectgroup name="btn">
+  <object id="10" name="settings" type="btn" x="668.124" y="335.277" width="184.645" height="150.632"/>
+  <object id="11" name="back" type="btn" x="221.088" y="724.004" width="677.843" height="204.082"/>
+  <object id="12" name="restart" type="btn" x="191.934" y="988.824" width="741.011" height="208.941"/>
+  <object id="13" name="menu" type="btn" x="196.793" y="1265.79" width="738.581" height="247.813"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="14" name="score" type="text" x="249.404" y="377.182" width="353.64" height="73.6449">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+</map>

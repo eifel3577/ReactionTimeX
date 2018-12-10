@@ -1,0 +1,27 @@
+
+explanation_screen1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+all_elements
+  rotate: false
+  xy: 1, 1
+  size: 617, 619
+  orig: 625, 624
+  offset: 4, 2
+  index: -1
+blye_star
+  rotate: false
+  xy: 1, 622
+  size: 203, 204
+  orig: 203, 204
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 1, 828
+  size: 113, 146
+  orig: 113, 146
+  offset: 0, 0
+  index: -1

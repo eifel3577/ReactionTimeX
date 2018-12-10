@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="22">
+ <tileset firstgid="1" source="../game/game_elements/game_element_1_get.tsx"/>
+ <tileset firstgid="2" source="../game/game_elements/game_element_1.tsx"/>
+ <tileset firstgid="4" source="done_bg.tsx"/>
+ <layer name="back" width="36" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAIA6AF/7/ZvmSzwAUkAAAAAAAAAADA1XwHygImQAAF
+  </data>
+ </layer>
+ <objectgroup name="btn">
+  <object id="17" name="level_done_close" type="btn" x="21.9069" y="1559.94" width="1026.23" height="282.782"/>
+ </objectgroup>
+ <objectgroup name="game_el">
+  <object id="15" name="game_el_1" type="game_el" gid="2" x="314.901" y="1472.11" width="231" height="230"/>
+  <object id="16" name="game_el_2" type="game_el" gid="2" x="533.161" y="1472.2" width="231" height="230"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="19" name="Finish" type="anim" x="300.211" y="874.736" width="480.529" height="88.2409"/>
+  <object id="20" name="button_next" type="anim" x="0" y="1575.98" width="1080" height="249.181"/>
+  <object id="21" name="blogger_congrat" type="anim" x="234.174" y="313.948" width="602.162" height="591.868"/>
+ </objectgroup>
+</map>

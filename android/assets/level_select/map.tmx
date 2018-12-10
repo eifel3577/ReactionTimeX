@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="36">
+ <tileset firstgid="1" source="bottom_btn.tsx"/>
+ <tileset firstgid="2" source="top_btn.tsx"/>
+ <tileset firstgid="3" source="closed_element.tsx"/>
+ <tileset firstgid="4" source="level_select_menu.tsx"/>
+ <tileset firstgid="5" source="../game/game_elements/game_element_1.tsx"/>
+ <tileset firstgid="7" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="8" source="../planet_done/closed_element.tsx"/>
+ <objectgroup name="top_anim">
+  <object id="17" name="gift_menu" type="anim" x="239.681" y="284.01" width="180.184" height="144.118"/>
+ </objectgroup>
+ <objectgroup name="bottom_back">
+  <object id="16" name="bottom_back" type="back" gid="1" x="44.6323" y="2159.09" width="988.41" height="298"/>
+ </objectgroup>
+ <objectgroup name="menu_back">
+  <object id="18" name="menu_back" type="back" gid="4" x="94.7247" y="1939.22" width="894" height="744"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="26" name="head_bg" type="top" gid="7" x="-79.36" y="536" width="1215.36" height="540" visible="0"/>
+  <object id="3" name="back" type="btn" x="2.71386" y="6.9708" width="222.65" height="528.402"/>
+  <object id="4" name="market" type="btn" x="866.186" y="-7.73996" width="201.262" height="517.112"/>
+  <object id="25" name="top_btn" type="top" gid="2" x="0" y="511.58" width="1080" height="261"/>
+  <object id="27" name="watch_video" type="btn" x="247.051" y="8.90274" width="173.603" height="534.164"/>
+ </objectgroup>
+ <objectgroup name="elements">
+  <object id="19" name="element_game" type="element" gid="5" x="200.996" y="1492.42" width="231" height="230"/>
+ </objectgroup>
+ <objectgroup name="menu_text">
+  <object id="20" name="element_name" type="text" x="436.271" y="1339.23" width="380.642" height="60">
+   <properties>
+    <property name="color" type="color" value="#fffee421"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="24" wrap="1" color="#fee421" bold="1" valign="center">element_name</text>
+  </object>
+  <object id="21" name="element_text" type="text" x="261.686" y="1475.47" width="571.059" height="244.264">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="23" name="start" type="btn" x="141.261" y="1708.02" width="802.517" height="241.397"/>
+ </objectgroup>
+ <objectgroup name="gameEl">
+  <object id="30" name="element_6" type="game_el" gid="8" x="808.547" y="2113.56" width="135" height="135"/>
+  <object id="31" name="element_5" type="game_el" gid="8" x="673.547" y="2113.56" width="135" height="135"/>
+  <object id="32" name="element_4" type="game_el" gid="8" x="538.547" y="2113.56" width="135" height="135"/>
+  <object id="33" name="element_3" type="game_el" gid="8" x="403.547" y="2113.56" width="135" height="135"/>
+  <object id="34" name="element_2" type="game_el" gid="8" x="268.547" y="2113.56" width="135" height="135"/>
+  <object id="35" name="element_1" type="game_el" gid="8" x="133.547" y="2113.56" width="135" height="135"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="5" name="score" type="text" x="498.134" y="310.13" width="311" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="22" name="button_start" type="anim" x="199.033" y="1727.25" width="666.32" height="189.645"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,125 @@
+buildscript {
+    
+
+    repositories {
+        maven {
+            url 'https://maven.google.com'
+            // Alternative URL is 'https://dl.google.com/dl/android/maven2/'
+        }
+        google()
+        jcenter()
+        maven { url uri(System.getenv("INTEL_MULTI_OS_ENGINE_HOME") + "/gradle") }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'org.multi-os-engine:moe-gradle:1.4.0'
+    }
+}
+
+allprojects {
+    apply plugin: "eclipse"
+    apply plugin: "idea"
+
+    version = '1.0'
+    ext {
+        appName = "ReactionTime X"
+        gdxVersion = '1.9.8'
+        box2DLightsVersion = '1.4'
+        ashleyVersion = '1.7.0'
+        aiVersion = '1.8.0'
+
+        android_compile_version = 26
+
+        // Google Play Services minimum requirements is 14
+        android_min_sdk_version = 14
+
+        appcompat_library_version = '27.0.2'
+        support_library_version = '27.0.2'
+        gms_library_version = '15.0.1'
+    }
+
+    repositories {
+        maven {
+            url 'https://maven.google.com'
+            // Alternative URL is 'https://dl.google.com/dl/android/maven2/'
+        }
+        google()
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+project(":android") {
+    apply plugin: "android"
+    apply plugin: "com.android.application"
+
+    configurations { natives }
+
+    dependencies {
+        implementation project(":core")
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        implementation "com.google.android.gms:play-services-games:15.0.1"
+        implementation "com.android.billingclient:billing:1.0"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
+        
+    }
+}
+
+project(":ios-moe") {
+    apply plugin: "moe"
+
+    configurations { natives }
+
+    dependencies {
+        compile project(":core")
+        compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
+
+    }
+}
+
+/*project(":ios") {
+    apply plugin: "java"
+    apply plugin: "robovm"
+
+    robovm {
+        archs = "arm64"
+        iosSignIdentity = "EA4AD6F2A83F4B5CB9E9FC17F67D81A1AE38A610"
+
+        iosProvisioningProfile = "ded81156-7613-416a-9753-fb173caac9b9"
+
+        iosSkipSigning = false
+        stdoutFifo = null
+        stderrFifo = null
+    }
+
+    dependencies {
+        compile project(":core")
+        compile "com.mobidevelop.robovm:robovm-rt:$roboVMVersion"
+        compile "com.mobidevelop.robovm:robovm-cocoatouch:$roboVMVersion"
+        compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+        
+    }
+}*/
+
+project(":core") {
+    apply plugin: "java"
+
+
+    dependencies {
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.rafaskoberg.gdx:typing-label:1.0.4"
+        compile "com.esotericsoftware.spine:spine-libgdx:3.6.53.1"
+    }
+}
+
+tasks.eclipse.doLast {
+    delete ".project"
+}

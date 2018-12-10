@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="19">
+ <tileset firstgid="2" source="../level_select/top_btn.tsx"/>
+ <tileset firstgid="3" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="4" source="top_btn_back_1.tsx"/>
+ <objectgroup name="fillBack">
+  <object id="17" name="head_bg" type="top" gid="3" x="-34.768" y="358.361" width="1140" height="540"/>
+ </objectgroup>
+ <objectgroup name="btn_back">
+  <object id="18" name="top_btn" type="back" gid="4" x="0" y="261" width="1080" height="261"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="3" name="back" type="btn" x="33.5893" y="26.3916" width="172.745" height="170.345"/>
+  <object id="4" name="market" type="btn" x="870.921" y="25.1922" width="172.745" height="170.345"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="5" name="score" type="text" x="493.691" y="65.2508" width="311" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="16" name="watch_video" type="anim" x="226.628" y="35.9695" width="180.184" height="144.118"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,41 @@
+
+explanation_screen3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+all_elements
+  rotate: false
+  xy: 1, 1
+  size: 617, 619
+  orig: 625, 624
+  offset: 4, 2
+  index: -1
+hand
+  rotate: false
+  xy: 582, 622
+  size: 113, 146
+  orig: 113, 146
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1, 622
+  size: 225, 225
+  orig: 231, 231
+  offset: 2, 3
+  index: -1
+2
+  rotate: false
+  xy: 449, 622
+  size: 131, 132
+  orig: 135, 136
+  offset: 2, 3
+  index: -1
+1
+  rotate: false
+  xy: 228, 622
+  size: 219, 220
+  orig: 222, 225
+  offset: 1, 3
+  index: -1

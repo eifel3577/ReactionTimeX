@@ -1,0 +1,20 @@
+
+Skill_flash.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fon_skill
+  rotate: false
+  xy: 1, 1
+  size: 320, 220
+  orig: 320, 220
+  offset: 0, 0
+  index: -1
+skill1
+  rotate: false
+  xy: 323, 1
+  size: 148, 205
+  orig: 148, 205
+  offset: 0, 0
+  index: -1

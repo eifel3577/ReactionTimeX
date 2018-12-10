@@ -1,0 +1,27 @@
+
+watch_video.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+video
+  rotate: false
+  xy: 1, 1
+  size: 693, 498
+  orig: 709, 514
+  offset: 7, 9
+  index: -1
+Group 2
+  rotate: false
+  xy: 696, 1
+  size: 252, 256
+  orig: 252, 256
+  offset: 0, 0
+  index: -1
+firework
+  rotate: false
+  xy: 1, 501
+  size: 378, 190
+  orig: 386, 198
+  offset: 4, 5
+  index: -1

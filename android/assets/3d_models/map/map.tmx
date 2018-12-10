@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="10" height="18" tilewidth="107" tileheight="107" infinite="0" nextobjectid="9">
+ <tileset firstgid="1" source="test_3d_back.tsx"/>
+ <tileset firstgid="2" source="../../menu/textures/go_btn.tsx"/>
+ <layer name="back" width="10" height="18">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+1,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="btn">
+  <object id="2" name="back" type="btn" x="75.0525" y="1720.2" width="174.122" height="153.107"/>
+  <object id="4" name="anim" type="btn" x="396.277" y="1651.16" width="687.481" height="273.191"/>
+  <object id="6" name="switch" type="btn" gid="2" x="949.706" y="1610.08" width="119" height="123"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="8" name="debug" type="text" x="19.0672" y="66.0672" width="1033.62" height="408.244">
+   <properties>
+    <property name="color" type="color" value="#fffc1a82"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#fc1a82" bold="1">453</text>
+  </object>
+ </objectgroup>
+</map>

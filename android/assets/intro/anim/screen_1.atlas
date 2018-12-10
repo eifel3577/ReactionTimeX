@@ -1,0 +1,82 @@
+
+screen_1_0.png
+size: 1591,2214
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fon_yearth
+  rotate: false
+  xy: 2, 2
+  size: 1587, 2210
+  orig: 1587, 2210
+  offset: 0, 0
+  index: 0
+
+screen_1_1.png
+size: 1591,2214
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+city
+  rotate: false
+  xy: 2, 2
+  size: 869, 838
+  orig: 869, 838
+  offset: 0, 0
+  index: 1
+true_2
+  rotate: false
+  xy: 873, 2
+  size: 348, 562
+  orig: 348, 562
+  offset: 0, 0
+  index: 1
+true_1
+  rotate: false
+  xy: 1223, 2
+  size: 243, 420
+  orig: 243, 420
+  offset: 0, 0
+  index: 1
+cloud
+  rotate: false
+  xy: 873, 566
+  size: 521, 221
+  orig: 521, 221
+  offset: 0, 0
+  index: 1
+platform
+  rotate: false
+  xy: 2, 1386
+  size: 906, 511
+  orig: 906, 511
+  offset: 0, 0
+  index: 1
+fon_text
+  rotate: false
+  xy: 2, 842
+  size: 893, 542
+  orig: 914, 563
+  offset: 11, 11
+  index: 1
+2
+  rotate: false
+  xy: 873, 789
+  size: 90, 45
+  orig: 90, 45
+  offset: 0, 0
+  index: 1
+1
+  rotate: false
+  xy: 1223, 424
+  size: 238, 119
+  orig: 238, 119
+  offset: 0, 0
+  index: 1
+3
+  rotate: false
+  xy: 1463, 424
+  size: 83, 60
+  orig: 83, 60
+  offset: 0, 0
+  index: 1

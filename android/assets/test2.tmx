@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="621">
+ <tileset firstgid="1" source="game/black_holes.tsx"/>
+ <tileset firstgid="3" source="game/txt_back.tsx"/>
+ <tileset firstgid="4" source="game/pause_background.tsx"/>
+ <tileset firstgid="5" source="game/emptyObj.tsx"/>
+ <tileset firstgid="6" source="game/gameObj.tsx"/>
+ <tileset firstgid="7" source="game/GP_back_new.tsx"/>
+ <tileset firstgid="8" source="game/back/back_game.tsx"/>
+ <tileset firstgid="9" source="game/back/back_game_gr.tsx"/>
+ <tileset firstgid="10" source="game/back/top_back_game.tsx"/>
+ <tileset firstgid="11" source="game/back/bottom_back_game.tsx"/>
+ <tileset firstgid="12" source="game/back/back_game_center.tsx"/>
+ <tileset firstgid="13" source="game/back/timer_game_bg.tsx"/>
+ <tileset firstgid="14" source="game/game_elements/game_element_1.tsx"/>
+ <tileset firstgid="16" source="game/game_elements/game_element_1_get.tsx"/>
+ <tileset firstgid="17" source="game/back/skill_count_back.tsx"/>
+ <tileset firstgid="18" source="game/freeze/up_dec_ice.tsx"/>
+ <tileset firstgid="19" source="game/freeze/mid_dec_ice.tsx"/>
+ <tileset firstgid="20" source="game/freeze/back_dec_ice.tsx"/>
+ <tileset firstgid="21" source="game/boom/up_dec_boom.tsx"/>
+ <tileset firstgid="22" source="game/boom/mid_dec_boom.tsx"/>
+ <tileset firstgid="23" source="game/boom/back_dec_boom.tsx"/>
+ <tileset firstgid="24" source="game/boom/bomb_boom.tsx"/>
+ <tileset firstgid="29" source="game/flash/top_dec_flash.tsx"/>
+ <tileset firstgid="30" source="game/flash/mid_dec_flash.tsx"/>
+ <tileset firstgid="31" source="game/flash/back_flash.tsx"/>
+ <tileset firstgid="32" source="game/flash/flash_anim.tsx"/>
+ <tileset firstgid="35" source="game/mid_red_back.tsx"/>
+ <layer name="back" width="36" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAIA6BV/3/YvmSzwAUkAAAAAAAAAADA1XwHygIpEAAK
+  </data>
+ </layer>
+ <objectgroup name="background">
+  <object id="599" name="back_ice" type="skill_back" gid="20" x="0" y="2156.35" width="1080" height="1920" visible="0"/>
+  <object id="603" name="back_boom" type="skill_back" gid="23" x="0" y="2156.35" width="1080" height="1920"/>
+  <object id="615" name="back_flash" type="skill_back" gid="31" x="0" y="2156.35" width="1080" height="1920" visible="0"/>
+ </objectgroup>
+ <objectgroup name="background_animation">
+  <object id="604" name="boom_anim_1" type="anim_back" gid="24" x="731.889" y="2103.26" width="300" height="300"/>
+  <object id="606" name="boom_anim_2" type="anim_back" gid="24" x="388.584" y="2104.86" width="300" height="300"/>
+  <object id="607" name="boom_anim_3" type="anim_back" gid="24" x="49.9755" y="2115.9" width="300" height="300"/>
+  <object id="608" name="boom_anim_4" type="anim_back" gid="24" x="47.1461" y="676.258" width="300" height="300"/>
+  <object id="609" name="boom_anim_5" type="anim_back" gid="24" x="726.831" y="664.992" width="300" height="300"/>
+  <object id="610" name="boom_anim_6" type="anim_back" gid="24" x="738.096" y="1066.79" width="300" height="300"/>
+  <object id="611" name="boom_anim_7" type="anim_back" gid="24" x="50.9012" y="1064.92" width="300" height="300"/>
+ </objectgroup>
+ <objectgroup name="game_elements">
+  <object id="583" name="timer_bg" type="bg" gid="13" x="314.248" y="800.134" width="455" height="238"/>
+  <object id="587" name="game_el_1" type="game_el" gid="14" x="315.473" y="798.861" width="231" height="230"/>
+  <object id="588" name="game_el_2" type="game_el" gid="14" x="532.385" y="800.563" width="231" height="230"/>
+  <object id="589" name="finish_el_back" type="finish_el" gid="16" x="198.092" y="799.744" width="681" height="230"/>
+  <object id="590" name="finish_el_1" type="finish_el" gid="14" x="185.02" y="793.625" width="231" height="230"/>
+ </objectgroup>
+ <objectgroup name="gui_back">
+  <object id="580" name="top_back" type="back" gid="10" x="0.109476" y="516.869" width="1080" height="298"/>
+  <object id="582" name="center_back" type="back" gid="12" x="0.109476" y="1903.57" width="1080" height="1176"/>
+  <object id="620" name="mid_boom" type="dec" gid="35" x="46.3744" y="1841.97" width="1000" height="1060"/>
+ </objectgroup>
+ <objectgroup name="flash" visible="0">
+  <object id="612" name="top_flash" type="dec" gid="29" x="0.0919456" y="546.752" width="1080" height="328"/>
+  <object id="614" name="mid_flash" type="dec" gid="30" x="22.8066" y="1872.37" width="1044.89" height="1123.43"/>
+  <object id="617" name="anim_flash" type="dec" gid="32" x="385.881" y="533.792" width="321.75" height="125"/>
+ </objectgroup>
+ <objectgroup name="boom" visible="0">
+  <object id="601" name="up_boom" type="dec" gid="21" x="0.0315603" y="516.477" width="1080" height="298"/>
+  <object id="602" name="mid_boom" type="dec" gid="22" x="23.2689" y="1909.1" width="1040.69" height="1158.89"/>
+ </objectgroup>
+ <objectgroup name="red" visible="0"/>
+ <objectgroup name="freeze" visible="0">
+  <object id="597" name="up_ice" type="dec" gid="18" x="-0.0162814" y="644.437" width="1080" height="426"/>
+  <object id="598" name="mid_ice" type="dec" gid="19" x="-0.0162814" y="2012.59" width="1080" height="1370"/>
+  <object id="451" name="r_timer_txt" type="timer" x="885.995" y="751.296" width="120" height="93">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="72"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="72" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">5</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="skill"/>
+ <objectgroup name="buttons">
+  <object id="256" name="pause" type="btn" x="865.691" y="5.38394" width="205.245" height="569.681"/>
+  <object id="257" name="reload" type="btn" x="3.98683" y="17.7422" width="204.444" height="512.938"/>
+  <object id="260" name="boom" type="btn" x="403.967" y="1885.84" width="273.365" height="264.978"/>
+  <object id="261" name="flash" type="btn" x="94.651" y="1892.26" width="237.227" height="251.103"/>
+  <object id="262" name="slow" type="btn" x="723.913" y="1883.83" width="272.98" height="271.868"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="591" name="Skill_flash" type="anim" x="99.2475" y="1885.84" width="228.751" height="241.193"/>
+  <object id="592" name="Skill_bomb" type="anim" x="422.067" y="1885.84" width="231.536" height="254.418"/>
+  <object id="593" name="1_reaction_coin" type="anim" x="7.83655" y="1450.33" width="100" height="100"/>
+  <object id="618" name="skill_ice" type="anim" x="750.75" y="1882.4" width="228.751" height="262.075"/>
+ </objectgroup>
+ <objectgroup name="text">
+  <object id="594" name="back_txt_1" type="back" gid="17" x="107.726" y="2123.4" width="71" height="71"/>
+  <object id="595" name="back_txt_2" type="back" gid="17" x="431.841" y="2123.4" width="71" height="71"/>
+  <object id="596" name="back_txt_3" type="back" gid="17" x="755.665" y="2123.4" width="71" height="71"/>
+  <object id="439" name="skill_c_1" type="text" x="115.486" y="2059.95" width="51" height="45">
+   <text fontfamily="Roboto" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">32</text>
+  </object>
+  <object id="440" name="skill_c_2" type="text" x="442.027" y="2060.89" width="50.7754" height="45">
+   <text fontfamily="Roboto" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">32</text>
+  </object>
+  <object id="441" name="skill_c_3" type="text" x="766.513" y="2060.89" width="51" height="45">
+   <text fontfamily="Roboto" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">32</text>
+  </object>
+  <object id="442" name="timer" type="text" x="395.45" y="624.196" width="296.619" height="77.0632">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="586" name="score" type="text" x="399.568" y="272.544" width="296.619" height="77.0632">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="other">
+  <object id="484" name="backObj" type="bg" gid="5" x="150.416" y="1050.5" width="135" height="135"/>
+  <object id="533" name="backObj" type="bg" gid="5" x="286.416" y="1050.5" width="135" height="135"/>
+  <object id="534" name="backObj" type="bg" gid="5" x="420.416" y="1050.5" width="135" height="135"/>
+  <object id="535" name="backObj" type="bg" gid="5" x="555.416" y="1049.5" width="135" height="135"/>
+  <object id="536" name="backObj" type="bg" gid="5" x="691.416" y="1050.5" width="135" height="135"/>
+  <object id="537" name="backObj" type="bg" gid="5" x="826.416" y="1050.5" width="135" height="135"/>
+  <object id="538" name="backObj" type="bg" gid="5" x="825.416" y="1184.5" width="135" height="135"/>
+  <object id="539" name="backObj" type="bg" gid="5" x="690.416" y="1184.5" width="135" height="135"/>
+  <object id="540" name="backObj" type="bg" gid="5" x="419.416" y="1184.5" width="135" height="135"/>
+  <object id="541" name="backObj" type="bg" gid="5" x="285.416" y="1184.5" width="135" height="135"/>
+  <object id="542" name="backObj" type="bg" gid="5" x="149.416" y="1184.5" width="135" height="135"/>
+  <object id="543" name="backObj" type="bg" gid="5" x="554.416" y="1183.5" width="135" height="135"/>
+  <object id="544" name="backObj" type="bg" gid="5" x="827.416" y="1320.49" width="135" height="135"/>
+  <object id="545" name="backObj" type="bg" gid="5" x="692.416" y="1320.49" width="135" height="135"/>
+  <object id="546" name="backObj" type="bg" gid="5" x="421.416" y="1320.49" width="135" height="135"/>
+  <object id="547" name="backObj" type="bg" gid="5" x="287.416" y="1320.49" width="135" height="135"/>
+  <object id="548" name="backObj" type="bg" gid="5" x="151.416" y="1320.49" width="135" height="135"/>
+  <object id="549" name="backObj" type="bg" gid="5" x="556.416" y="1319.49" width="135" height="135"/>
+  <object id="550" name="backObj" type="bg" gid="5" x="826.416" y="1456.49" width="135" height="135"/>
+  <object id="551" name="backObj" type="bg" gid="5" x="691.416" y="1456.49" width="135" height="135"/>
+  <object id="552" name="backObj" type="bg" gid="5" x="420.416" y="1456.49" width="135" height="135"/>
+  <object id="553" name="backObj" type="bg" gid="5" x="286.416" y="1456.49" width="135" height="135"/>
+  <object id="554" name="backObj" type="bg" gid="5" x="150.416" y="1456.49" width="135" height="135"/>
+  <object id="555" name="backObj" type="bg" gid="5" x="555.416" y="1455.49" width="135" height="135"/>
+  <object id="556" name="backObj" type="bg" gid="5" x="827.416" y="1590.49" width="135" height="135"/>
+  <object id="557" name="backObj" type="bg" gid="5" x="692.416" y="1590.49" width="135" height="135"/>
+  <object id="558" name="backObj" type="bg" gid="5" x="421.416" y="1590.49" width="135" height="135"/>
+  <object id="559" name="backObj" type="bg" gid="5" x="287.416" y="1590.49" width="135" height="135"/>
+  <object id="560" name="backObj" type="bg" gid="5" x="151.416" y="1590.49" width="135" height="135"/>
+  <object id="561" name="backObj" type="bg" gid="5" x="556.416" y="1589.49" width="135" height="135"/>
+  <object id="562" name="backObj" type="bg" gid="5" x="827.416" y="1725.49" width="135" height="135"/>
+  <object id="563" name="backObj" type="bg" gid="5" x="692.416" y="1725.49" width="135" height="135"/>
+  <object id="564" name="backObj" type="bg" gid="5" x="421.416" y="1725.49" width="135" height="135"/>
+  <object id="565" name="backObj" type="bg" gid="5" x="287.416" y="1725.49" width="135" height="135"/>
+  <object id="566" name="backObj" type="bg" gid="5" x="151.416" y="1725.49" width="135" height="135"/>
+  <object id="567" name="backObj" type="bg" gid="5" x="556.416" y="1724.49" width="135" height="135"/>
+ </objectgroup>
+ <objectgroup name="obj">
+  <object id="485" name="empty" type="object" gid="6" x="150.421" y="1049.06" width="135" height="135"/>
+  <object id="486" name="empty" type="object" gid="6" x="285.421" y="1049.06" width="135" height="135"/>
+  <object id="487" name="empty" type="object" gid="6" x="420.421" y="1049.06" width="135" height="135"/>
+  <object id="488" name="empty" type="object" gid="6" x="555.421" y="1049.06" width="135" height="135"/>
+  <object id="489" name="empty" type="object" gid="6" x="690.421" y="1049.06" width="135" height="135"/>
+  <object id="490" name="empty" type="object" gid="6" x="825.421" y="1049.06" width="135" height="135"/>
+  <object id="491" name="empty" type="object" gid="6" x="825.405" y="1184.07" width="135" height="135"/>
+  <object id="492" name="empty" type="object" gid="6" x="690.405" y="1184.07" width="135" height="135"/>
+  <object id="493" name="empty" type="object" gid="6" x="555.405" y="1184.07" width="135" height="135"/>
+  <object id="494" name="empty" type="object" gid="6" x="420.405" y="1184.07" width="135" height="135"/>
+  <object id="495" name="empty" type="object" gid="6" x="285.405" y="1184.07" width="135" height="135"/>
+  <object id="496" name="empty" type="object" gid="6" x="150.405" y="1184.07" width="135" height="135"/>
+  <object id="497" name="empty" type="object" gid="6" x="150.402" y="1319.06" width="135" height="135"/>
+  <object id="498" name="empty" type="object" gid="6" x="285.402" y="1319.06" width="135" height="135"/>
+  <object id="499" name="empty" type="object" gid="6" x="420.402" y="1319.06" width="135" height="135"/>
+  <object id="500" name="empty" type="object" gid="6" x="555.402" y="1319.06" width="135" height="135"/>
+  <object id="501" name="empty" type="object" gid="6" x="690.402" y="1319.06" width="135" height="135"/>
+  <object id="502" name="empty" type="object" gid="6" x="825.402" y="1319.06" width="135" height="135"/>
+  <object id="503" name="empty" type="object" gid="6" x="825.402" y="1454.06" width="135" height="135"/>
+  <object id="504" name="empty" type="object" gid="6" x="690.402" y="1454.06" width="135" height="135"/>
+  <object id="505" name="empty" type="object" gid="6" x="555.402" y="1454.06" width="135" height="135"/>
+  <object id="506" name="empty" type="object" gid="6" x="420.402" y="1454.06" width="135" height="135"/>
+  <object id="507" name="empty" type="object" gid="6" x="285.402" y="1454.06" width="135" height="135"/>
+  <object id="508" name="empty" type="object" gid="6" x="150.402" y="1454.06" width="135" height="135"/>
+  <object id="509" name="empty" type="object" gid="6" x="150.398" y="1589.07" width="135" height="135"/>
+  <object id="510" name="empty" type="object" gid="6" x="285.398" y="1589.07" width="135" height="135"/>
+  <object id="511" name="empty" type="object" gid="6" x="420.398" y="1589.07" width="135" height="135"/>
+  <object id="512" name="empty" type="object" gid="6" x="555.398" y="1589.07" width="135" height="135"/>
+  <object id="513" name="empty" type="object" gid="6" x="690.398" y="1589.07" width="135" height="135"/>
+  <object id="514" name="empty" type="object" gid="6" x="825.398" y="1589.07" width="135" height="135"/>
+  <object id="515" name="empty" type="object" gid="6" x="825.398" y="1724.06" width="135" height="135"/>
+  <object id="516" name="empty" type="object" gid="6" x="690.398" y="1724.06" width="135" height="135"/>
+  <object id="517" name="empty" type="object" gid="6" x="555.398" y="1724.06" width="135" height="135"/>
+  <object id="518" name="empty" type="object" gid="6" x="420.398" y="1724.06" width="135" height="135"/>
+  <object id="519" name="empty" type="object" gid="6" x="285.398" y="1724.06" width="135" height="135"/>
+  <object id="520" name="empty" type="object" gid="6" x="150.398" y="1724.06" width="135" height="135"/>
+ </objectgroup>
+</map>

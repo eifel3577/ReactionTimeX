@@ -1,0 +1,27 @@
+
+2_reaction_coin.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+ыааыуаыуа
+  rotate: false
+  xy: 138, 1
+  size: 100, 48
+  orig: 100, 48
+  offset: 0, 0
+  index: -1
+11111
+  rotate: false
+  xy: 138, 51
+  size: 50, 48
+  orig: 50, 48
+  offset: 0, 0
+  index: -1

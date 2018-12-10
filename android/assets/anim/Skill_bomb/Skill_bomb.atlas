@@ -1,0 +1,27 @@
+
+Skill_bomb.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fon_skill
+  rotate: false
+  xy: 1, 1
+  size: 320, 220
+  orig: 320, 220
+  offset: 0, 0
+  index: -1
+skill2
+  rotate: false
+  xy: 1, 223
+  size: 175, 186
+  orig: 180, 191
+  offset: 2, 2
+  index: -1
+drgdrgdrgdrhdrh
+  rotate: false
+  xy: 323, 1
+  size: 174, 350
+  orig: 174, 350
+  offset: 0, 0
+  index: -1

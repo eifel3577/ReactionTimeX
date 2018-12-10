@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="66">
+ <tileset firstgid="1" source="../game/back/skill_count_back.tsx"/>
+ <tileset firstgid="2" source="../shop/header_menu.tsx"/>
+ <tileset firstgid="3" source="../buy/buy_top_btn.tsx"/>
+ <tileset firstgid="4" source="shops_button.tsx"/>
+ <tileset firstgid="5" source="coin.tsx"/>
+ <tileset firstgid="6" source="energy.tsx"/>
+ <tileset firstgid="7" source="ships.tsx"/>
+ <tileset firstgid="8" source="skill.tsx"/>
+ <tileset firstgid="9" source="shop_category.tsx"/>
+ <tileset firstgid="10" source="../stat/back_bottom.tsx"/>
+ <objectgroup name="menu_bg">
+  <object id="53" name="menu_bg" type="bg" gid="4" x="39.3012" y="1928.95" width="1003" height="994"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="51" name="head_bg" type="top" gid="2" x="-79.36" y="536" width="1215.36" height="540"/>
+  <object id="52" name="top_btn" type="back" gid="3" x="2.5" y="511.58" width="1075" height="261"/>
+  <object id="63" name="label_top" type="back" gid="9" x="275.228" y="744.103" width="542" height="248"/>
+ </objectgroup>
+ <objectgroup name="top_btn">
+  <object id="33" name="video" type="btn" x="262.657" y="-1.45171" width="228.49" height="523.23"/>
+  <object id="34" name="back" type="btn" x="19.6356" y="-1.19571" width="205.284" height="533.935"/>
+ </objectgroup>
+ <objectgroup name="top_txt">
+  <object id="18" name="coins" type="text" x="753.068" y="300.13" width="219.968" height="76.0085">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">453</text>
+  </object>
+  <object id="64" name="SHOP CATEGORY" type="text" x="328.789" y="579.86" width="448.309" height="82.7244">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">SHOP CATEGORY</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="top_anim">
+  <object id="50" name="gift_menu" type="anim" x="262.523" y="264.88" width="233.402" height="178.196"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="54" name="coins" type="btn" gid="5" x="189.889" y="1270.53" width="202" height="176"/>
+  <object id="55" name="energy" type="btn" gid="6" x="166.89" y="1796.46" width="248" height="195"/>
+  <object id="56" name="ships" type="btn" gid="7" x="661.166" y="1780.67" width="273" height="187"/>
+  <object id="57" name="skill" type="btn" gid="8" x="661.953" y="1277.91" width="261" height="182"/>
+ </objectgroup>
+ <objectgroup name="bottom_back">
+  <object id="65" name="bttm_back" gid="10" x="0" y="2162.82" width="1080" height="252"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="59" name="RC" type="text" x="288.672" y="975.941" width="212.314" height="75.6581">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">RC</text>
+  </object>
+  <object id="60" name="SKILL" type="text" x="786.073" y="978.048" width="212.314" height="75.6581">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">SKILL</text>
+  </object>
+  <object id="61" name="ENERGY" type="text" x="290.077" y="1476.85" width="212.314" height="75.6581">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">ENERGY</text>
+  </object>
+  <object id="62" name="SHIPS" type="text" x="788.883" y="1479.66" width="212.314" height="75.6581">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">SHIPS</text>
+  </object>
+ </objectgroup>
+</map>

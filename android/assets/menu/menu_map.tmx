@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="left-up" width="36" height="64" tilewidth="30" tileheight="30" infinite="0" nextobjectid="77">
+ <tileset firstgid="1" source="textures/back.tsx"/>
+ <tileset firstgid="2" source="textures/sq_btn.tsx"/>
+ <tileset firstgid="16" source="textures/shop.tsx"/>
+ <tileset firstgid="17" source="textures/level.tsx"/>
+ <tileset firstgid="18" source="textures/lg_btn.tsx"/>
+ <tileset firstgid="32" source="title.tsx"/>
+ <tileset firstgid="33" source="textures/planet3.tsx"/>
+ <tileset firstgid="34" source="textures/go_btn.tsx"/>
+ <tileset firstgid="35" source="textures/rock.tsx"/>
+ <tileset firstgid="37" source="../game/back/top_back_game.tsx"/>
+ <tileset firstgid="39" source="textures/planet.tsx"/>
+ <tileset firstgid="40" source="textures/bottom_rock_menu.tsx"/>
+ <tileset firstgid="41" source="textures/share_back.tsx"/>
+ <tileset firstgid="42" source="textures/share_menu.tsx"/>
+ <tileset firstgid="43" source="textures/exit_menu.tsx"/>
+ <objectgroup name="anim">
+  <object id="72" name="planet" type="anim" gid="39" x="-131.374" y="535.629" width="710" height="719"/>
+  <object id="73" name="bottom_rock" type="anim" gid="40" x="-423.527" y="1953.84" width="1964" height="639"/>
+ </objectgroup>
+ <objectgroup name="bottom_back"/>
+ <objectgroup name="top_back">
+  <object id="71" gid="1" x="0" y="1920" width="1080" height="1920"/>
+ </objectgroup>
+ <objectgroup name="other"/>
+ <objectgroup name="share" visible="0">
+  <object id="75" name="share_menu" type="back" gid="42" x="43.9943" y="1497" width="991" height="1036"/>
+  <object id="44" name="shareFB" type="btn" x="298.812" y="977.978" width="170.189" height="211.323"/>
+  <object id="46" name="shareTW" type="btn" x="544.684" y="966.573" width="212.334" height="223.873"/>
+  <object id="61" name="share" type="btn" x="444.143" y="1264.68" width="177.657" height="171.635"/>
+ </objectgroup>
+ <objectgroup name="quit" visible="0" locked="1">
+  <object id="76" name="exit_menu" type="back" gid="43" x="40.99" y="1492.98" width="992" height="1032"/>
+  <object id="64" name="cancel" type="btn" x="354.067" y="1248.8" width="174.641" height="148.325"/>
+  <object id="65" name="ok" type="btn" x="571.77" y="1251.2" width="155.502" height="174.641"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="20" name="initScore" type="btn" x="58" y="24" width="524" height="176"/>
+  <object id="47" name="shop" type="btn" x="386.284" y="256.145" width="123.941" height="140.467"/>
+  <object id="48" name="initScore" type="btn" x="357.364" y="41.3138" width="148.73" height="142.533"/>
+  <object id="49" name="share" type="btn" x="677.546" y="37.1824" width="156.992" height="154.927"/>
+  <object id="50" name="settings" type="btn" x="900.64" y="43.3795" width="140.467" height="140.467"/>
+  <object id="51" name="play" type="btn" x="8.84924" y="1121.67" width="1061.58" height="443.537"/>
+  <object id="52" name="skill" type="btn" x="86.7589" y="745.714" width="254.08" height="249.948"/>
+  <object id="53" name="achiv" type="btn" x="417.269" y="753.976" width="241.686" height="227.226"/>
+  <object id="54" name="playScrore" type="btn" x="749.845" y="762.239" width="231.357" height="204.503"/>
+  <object id="55" name="market" type="btn" x="894.443" y="252.014" width="154.927" height="161.124"/>
+  <object id="56" name="personal" type="btn" x="683.743" y="241.686" width="154.927" height="173.518"/>
+  <object id="62" name="quit" type="btn" x="881.322" y="458.187" width="172.759" height="157.737"/>
+ </objectgroup>
+ <objectgroup name="modalBack" visible="0">
+  <object id="74" name="share" type="back" gid="41" x="-61.7647" y="2009.41" width="1200" height="2160"/>
+ </objectgroup>
+ <objectgroup name="spine">
+  <object id="70" name="play" type="btn" x="200.928" y="1148.46" width="681.677" height="252.014"/>
+ </objectgroup>
+ <objectgroup name="txt">
+  <object id="8" name="score" type="text" x="93" y="77" width="311" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="9" name="coins" type="text" x="192" y="299" width="154" height="60">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="48"/>
+   </properties>
+   <text fontfamily="Roboto" pixelsize="48" wrap="1" color="#ffffff" bold="1">453</text>
+  </object>
+ </objectgroup>
+</map>

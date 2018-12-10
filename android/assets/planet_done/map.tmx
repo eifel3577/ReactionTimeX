@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="36" height="72" tilewidth="30" tileheight="30" infinite="0" nextobjectid="46">
+ <tileset firstgid="1" source="bottom_btn.tsx"/>
+ <tileset firstgid="2" source="closed_element.tsx"/>
+ <tileset firstgid="3" source="done_menu_back.tsx"/>
+ <tileset firstgid="4" source="done_top_back.tsx"/>
+ <tileset firstgid="5" source="../loading/loading_bottom.tsx"/>
+ <tileset firstgid="6" source="../level_done/done_bg.tsx"/>
+ <tileset firstgid="7" source="../shop/planets.tsx"/>
+ <tileset firstgid="16" source="planet_done_pl_back.tsx"/>
+ <tileset firstgid="17" source="../shop/names.tsx"/>
+ <objectgroup name="menu_back">
+  <object id="37" name="mid_back" type="back" gid="16" x="-2.06758" y="1218.09" width="1012" height="770"/>
+  <object id="40" name="menu_back" type="back" gid="3" x="25.0695" y="2113.18" width="1024" height="642"/>
+ </objectgroup>
+ <objectgroup name="bottom_back">
+  <object id="16" name="bottom_back" type="back" gid="1" x="56.4874" y="2165.85" width="988.408" height="298"/>
+  <object id="28" name="bottom_back_2" type="back" gid="4" x="1189.28" y="1975.5" width="1285" height="647" rotation="180"/>
+ </objectgroup>
+ <objectgroup name="top_back">
+  <object id="31" name="top_back" type="back" gid="4" x="-93.4091" y="563.167" width="1285" height="647"/>
+ </objectgroup>
+ <objectgroup name="btn">
+  <object id="3" name="next" type="btn" x="525.607" y="845.481" width="516.745" height="338.345"/>
+ </objectgroup>
+ <objectgroup name="gameEl">
+  <object id="8" name="element_6" type="game_el" gid="2" x="822.933" y="2115" width="135" height="135"/>
+  <object id="9" name="element_5" type="game_el" gid="2" x="687.933" y="2115" width="135" height="135"/>
+  <object id="10" name="element_4" type="game_el" gid="2" x="552.933" y="2115" width="135" height="135"/>
+  <object id="11" name="element_3" type="game_el" gid="2" x="417.933" y="2115" width="135" height="135"/>
+  <object id="12" name="element_2" type="game_el" gid="2" x="282.933" y="2115" width="135" height="135"/>
+  <object id="13" name="element_1" type="game_el" gid="2" x="147.933" y="2115" width="135" height="135"/>
+ </objectgroup>
+ <objectgroup name="anim">
+  <object id="29" name="done_planet_button" type="anim" x="534.311" y="815.517" width="532.374" height="349.322"/>
+  <object id="38" name="station_1" type="anim" x="177.286" y="1227.75" width="870.958" height="224.294"/>
+ </objectgroup>
+ <objectgroup name="menu_text">
+  <object id="41" name="element_text" type="text" x="180.103" y="1647.86" width="727.314" height="244.264">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="36"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="36" wrap="1" color="#ffffff" bold="1">Is the smallest and innermost  planet in the Solar System.{WAIT} Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.</text>
+  </object>
+  <object id="42" name="unlock_text_2" type="text" x="203.915" y="1297.79" width="537.409" height="131.395">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="64"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+  <object id="44" name="unlock_text" type="text" x="208.252" y="1251.44" width="537.409" height="96.422">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="size" type="int" value="24"/>
+   </properties>
+   <text fontfamily="Lucida Grande" pixelsize="64" wrap="1" color="#ffffff" bold="1" halign="center" valign="center">3245</text>
+  </object>
+ </objectgroup>
+ <objectgroup name="planets">
+  <object id="35" name="next_planet" type="planet" gid="10" x="651.932" y="842.331" width="302.314" height="231.647"/>
+  <object id="36" name="now_planet" type="planet" gid="9" x="113.854" y="1028.72" width="521.585" height="397.887"/>
+  <object id="45" name="name" type="name" gid="17" x="635.379" y="626.217" width="330" height="165"/>
+ </objectgroup>
+</map>
