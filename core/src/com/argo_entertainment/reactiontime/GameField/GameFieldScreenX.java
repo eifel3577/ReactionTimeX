@@ -73,12 +73,13 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;
+    //рендереры
     private OrthogonalTiledMapRenderer pauseMapRenderer;
     private OrthogonalTiledMapRenderer finalMapRenderer;
     private OrthogonalTiledMapRenderer doneMapRenderer;
     private OrthogonalTiledMapRenderer gameOverMapRenderer;
 
-
+    //флаг игра окончена
     private boolean finalGame = false;
     private boolean finalBonus = false;
     private Stage final_stage;
@@ -194,7 +195,9 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
     private float VIRTUAL_WIDTH = 1080, VIRTUAL_HEIGHT = 1920;
 
+    
     public GameFieldScreenX(ReactionTimeClass game, OrthographicCamera game_camera, int type, String planet_name, int planet, int element) {
+        //инициализация переменных, установка камеры в центр экрана
         parent = game;
         camera = game_camera;
 
@@ -217,12 +220,12 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
             elementsTimer[planetNum - 1][i] += elementsTimer[planetNum - 1][i] * (0.3 * (elementNum - 1));
         }
 
-        // Hard Levels init
-        hardLevels[0][1] = 3; //Elements generate count
-        hardLevels[0][2] = 1100; //Elements generate time
-        hardLevels[0][3] = 30; //Special Elements generate time @ToDo
-        hardLevels[0][4] = 0; //Disable timing
-        hardLevels[0][5] = 0; //Disable count
+        //инициализация уровней
+        hardLevels[0][1] = 3; //Elements generate count Количество генерируемых элементов
+        hardLevels[0][2] = 1100; //Elements generate time Время генерации элементов
+        hardLevels[0][3] = 30; //Special Elements generate time @ToDo Время генерации специальных элементов
+        hardLevels[0][4] = 0; //Disable timing отключение тайминга
+        hardLevels[0][5] = 0; //Disable count 
 
         hardLevels[1][1] = 3;
         hardLevels[1][2] = 1200;
@@ -248,19 +251,22 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         hardLevels[7][4] = 9000;
         hardLevels[7][5] = 8;
 
+        //загружает текстуры элементов по типу
         elements = parent.getElements(type);
-
+        
         elementsType = type;
+        //получение сохраненных значений (в интах)
         savedEl = parent.getSavedElements(planetNum, elementNum);
     }
 
 
+    //массив для хранения сохраненных значений
     private Integer[] savedEl = new Integer[2];
 
     @Override
     public void show() {
 
-
+        //настройка видовых экранов для разных девайсов
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
 
@@ -269,20 +275,23 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         fitViewportBottom = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
 
         fillViewport = new FillViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
-
+        //инициализация обьекта класса для дрожания экрана
         screenShake = new ScreenShake();
         //разные карты (карта игры,карта паузы,финальная карта,карта прохождения уровня,карта конца игры)
         TiledMap tiledMap, pauseMap, finalMap, levelDone, gameOver;
 
         batch = new SpriteBatch();
+        //инициализация карт
         tiledMap = parent.tiledMap("game_field.tmx");
         pauseMap = parent.tiledMap("pause/map.tmx");
         levelDone = parent.tiledMap("level_done/map.tmx");
         gameOver = parent.tiledMap("game_over/map.tmx");
-
         finalMap = parent.tiledMap("finish/finish_map.tmx");
+        
+        //инициализация текстур
         Texture[] textures = parent.getTextures();
         Texture[][] specials = parent.getSpecial();
+        //инициализация шрифтов
         BitmapFont fonts[] = parent.getFonts();
 
         //разные рендереры для обработки разных карт
@@ -641,17 +650,20 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
     private BtnActor selActor;
 
+    //рестарт,освобождение ресурсов,загрузка
     private void restartGame(){
         this.dispose();
         this.show();
     }
 
+    //обработка нажатия кнопки Назад.
     private void setTouchDetector() {
         Gdx.input.setCatchBackKey(true);
         InputProcessor ip = new InputProcessor() {
             @Override
             public boolean keyDown(int keycode) {
                 if(keycode == Input.Keys.BACK){
+                    //нажатие на Назад - возврат на экран Главного меню
                     parent.setScreen(new MainMenuScreen(parent, camera, null));
                     return true;
                 }
@@ -702,6 +714,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         Gdx.input.setInputProcessor(multiplexer);
     }
 
+    
     private void setData() {
 
         stage.VIBRO = parent.getSettings("vibro");
