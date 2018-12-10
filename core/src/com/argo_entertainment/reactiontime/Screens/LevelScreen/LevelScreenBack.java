@@ -76,6 +76,8 @@ import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonJson;
 
 public class LevelScreenBack implements Screen, GestureDetector.GestureListener {
+
+
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;
@@ -144,6 +146,7 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
 
     @Override
     public void show() {
+        //загрузка 3d планеты
         parent.assetManager.load("level_select/3d_planets/"+planet_num+".g3db", Model.class);
         parent.assetManager.finishLoading();
 
@@ -503,7 +506,6 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
         spineAnimationsStage.dispose();
         topSpineAnimationsStage.dispose();
         activeBackgroundStage.dispose();
-
         parent.assetManager.unload("level_select/3d_planets/"+planet_num+".g3db");
     }
 
@@ -810,9 +812,10 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
             String type = selActor.getName();
 
             if (type.equals("start") && element_num > 0) {
+
                 parent.setScreen(new GameFieldScreenX(parent, camera, lvl_type, planet_name, planet_num, element_num));
                 this.dispose();
-            }
+                }
 
             if (type.equals("back")) {
                 parent.setScreen(back_screen);

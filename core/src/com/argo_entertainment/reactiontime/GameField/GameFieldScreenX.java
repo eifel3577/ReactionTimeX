@@ -68,6 +68,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.moveBy;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.parallel;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
+//главный игровой экран
 public class GameFieldScreenX implements Screen, GestureDetector.GestureListener {
     private ReactionTimeClass parent;
 
@@ -76,6 +77,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
     private OrthogonalTiledMapRenderer finalMapRenderer;
     private OrthogonalTiledMapRenderer doneMapRenderer;
     private OrthogonalTiledMapRenderer gameOverMapRenderer;
+
 
     private boolean finalGame = false;
     private boolean finalBonus = false;
@@ -197,7 +199,9 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         camera = game_camera;
 
         planetName = planet_name;
+
         planetNum = planet;
+
         elementNum = element;
 
         camera.viewportWidth = width / 2;
@@ -208,6 +212,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
 
 
+        //настройка скорости игры
         for(int i = 0; i < 4; i++){
             elementsTimer[planetNum - 1][i] += elementsTimer[planetNum - 1][i] * (0.3 * (elementNum - 1));
         }
@@ -244,6 +249,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         hardLevels[7][5] = 8;
 
         elements = parent.getElements(type);
+
         elementsType = type;
         savedEl = parent.getSavedElements(planetNum, elementNum);
     }
@@ -257,6 +263,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
+
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
         fitViewport = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         fitViewportBottom = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
@@ -264,6 +271,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         fillViewport = new FillViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
 
         screenShake = new ScreenShake();
+        //разные карты (карта игры,карта паузы,финальная карта,карта прохождения уровня,карта конца игры)
         TiledMap tiledMap, pauseMap, finalMap, levelDone, gameOver;
 
         batch = new SpriteBatch();
@@ -277,6 +285,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         Texture[][] specials = parent.getSpecial();
         BitmapFont fonts[] = parent.getFonts();
 
+        //разные рендереры для обработки разных карт
         pauseMapRenderer = new OrthogonalTiledMapRenderer(pauseMap);
         finalMapRenderer = new OrthogonalTiledMapRenderer(finalMap);
         doneMapRenderer = new OrthogonalTiledMapRenderer(levelDone);
@@ -320,18 +329,21 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         for(MapObject object : objects) {
             if (object instanceof RectangleMapObject) {
                 RectangleMapObject cell = (RectangleMapObject) object;
-
+                //получает строку например "1_reaction_coin" в зависимости от уровня
                 String plusCoinName = coinsByOne[planetNum - 1] + "_reaction_coin";
+                //загружает атлас для этой строки
                 TextureAtlas atlas = parent.assetManager.get("anim/"+plusCoinName+"/"+plusCoinName+".atlas");
+
                 SkeletonJson json = new SkeletonJson(atlas); // This loads skeleton JSON data, which is stateless.
                 json.setScale(2f);
-
+                //читает анимационный json из атласа
                 SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal("anim/"+plusCoinName+"/"+plusCoinName+".json"));
+
                 plusCoin = new SpineAnimationActor(cell, skeletonData);
                 plusCoin.setAnimationState(false);
                 plusCoin.setAnimationLoop(false);
                 plusCoin.setVisible(false);
-
+                //отслеживание события анимации
                 plusCoin.animationState.addListener(new AnimationState.AnimationStateListener() {
                     @Override
                     public void start(AnimationState.TrackEntry entry) {
@@ -353,9 +365,11 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
                     }
 
+                    //по завершении анимации актер не виден
                     @Override
                     public void complete(AnimationState.TrackEntry entry) {
-                        plusCoin.setVisible(false);
+                        //plusCoin.setVisible(false);
+                        plusCoin.setVisible(true);
                     }
 
                     @Override
@@ -363,11 +377,12 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
                     }
                 });
-
+                //добавляет актера в сцену
                 plusAnimationsStage.addActor(plusCoin);
             }
         }
 
+        //текст количество набранных очков
         midTextGroup = new TextGroup(tiledMap.getLayers().get("mid_txt"), fonts);
         midTxt.addActor(midTextGroup);
 
@@ -377,6 +392,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         label1Style.font = fonts[72];
         label1Style.fontColor = Color.WHITE;
 
+        //настройка текста
         labelRC = new Label("+1",label1Style);
 
         labelRC.setName("1RC");
@@ -389,32 +405,39 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
         RCStage.addActor(labelRC);
 
+        //ячейки под элементы
         BackObjGroup midBackObjGroup = new BackObjGroup( tiledMap.getLayers().get("other"), elements[0]);
         midBtn.addActor(midBackObjGroup);
-
+        //желтые ячейки под элементы
         objects = tiledMap.getLayers().get("obj").getObjects();
         for(MapObject object : objects) {
             if (object instanceof TextureMapObject) {
+                //получаем из желтых ячеек конкретную желтую ячейку
                 TextureMapObject cell = (TextureMapObject) object;
-
+                //создаем актера типа TiledMapObjActor  и передаем ему обьект желтую ячейку и массив текстур
                 TiledMapObjActor actor = new TiledMapObjActor(cell, textures);
 
+                //размеры актера
                 actor.setOrigin(67.5f, 67.5f);
                 actor.setBounds(cell.getX(), cell.getY(), 135,
                         135);
-
+                //видимость случайна или видымый или нет
                 int visible = (int) (Math.random() * 1);
 
                 actor.setVisible(visible != 0);
+                //получаем текстуру из массива текстур elements (значки для игровых элементов,который передвигаются пальцем)
                 actor.texture = elements[1];
+                //добавление актера в сцену
                 stage.addActor(actor);
             }
         }
 
         gameElementsStage = new GameElementsStage(fitViewport);
+        //группа актеров gameElementGroup
         gameElementGroup = new GameElementGroup(tiledMap.getLayers().get("game_elements"), parent.getElementsSprite(planetNum, elementNum));
+        //добавление группы актеров в сцену
         gameElementsStage.addActor(gameElementGroup);
-
+        //получает массив сохраненных элементов по номеру планеты
         gameElementCount = parent.getSavedElements(planetNum)[elementNum - 1][1];
 
         //@ToDo:BOTTTOM ----------------------------------------------------------------------------------
@@ -422,12 +445,14 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         bottomBtn = new Stage(fitViewportBottom);
         bottomTxt = new Stage(fitViewportBottom);
         bottomSpineAnimationsStage = new SpineAnimationsStage(fitViewportBottom);
-
+        //группа акторов (кнопки заморозить,бомба,время внизу экрана)
         ButtonGroup bottomBtnGroup = new ButtonGroup(tiledMap.getLayers().get("bottom_btn"));
         bottomBtn.addActor(bottomBtnGroup);
 
         objects = tiledMap.getLayers().get("bottom_skill").getObjects();
 
+        //получение json-ов для отрисовки анимации кнопок заморозить,бомба,время.актеры кнопки будут иметь тип SpineAnimationActor
+        //добавление актеров кнопок в сцену bottomSpineAnimationsStage
         for(MapObject object : objects) {
             if (object instanceof RectangleMapObject) {
                 RectangleMapObject cell = (RectangleMapObject) object;
@@ -443,24 +468,30 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         }
 
 
+        //группа актеров (тексты на кнопках заморозить,бомба,время)
         bottomTextGroup = new TextGroup(tiledMap.getLayers().get("bottom_txt"), fonts);
+        //добавление актеров в сцену bottomTxt
         bottomTxt.addActor(bottomTextGroup);
 
 
         //@ToDo:FREEZE ----------------------------------------------------------------------------------
         freezeTopBack = new Stage(fitViewportTop);
         freezeMidBack = new Stage(fitViewport);
-
+        //снег вверху экрана
         freezeTopGroup = new FreezeGroup(tiledMap.getLayers().get("top_freeze"), fonts);
+        //анимация снега
         freezeTopGroup.startAnimation(false, 0);
+        //добавление актеров в сцену freezeTopBack
         freezeTopBack.addActor(freezeTopGroup);
 
+        //снег по бокам игрового поля
         freezeMidGroup = new FreezeGroup(tiledMap.getLayers().get("mid_freeze"), fonts);
         freezeMidGroup.startAnimation(false, 0);
         freezeMidBack.addActor(freezeMidGroup);
 
 
         //@ToDo:BOOOM ----------------------------------------------------------------------------------
+        //взрыв
         boomTopBack = new Stage(fitViewportTop);
         boomMidBack = new Stage(fitViewport);
         backgroundBoomStage = new Stage(fillViewport);
@@ -478,6 +509,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         backgroundBoomStage.addActor(boomAnimBackGroup);
 
         //@ToDo:FLASH ----------------------------------------------------------------------------------
+        //молнии
         flashTopBack = new Stage(fitViewportTop);
         flashMidBack = new Stage(fitViewport);
 
@@ -491,6 +523,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
 
         //@ToDo:BACKGROUND ----------------------------------------------------------------------------------
+        //задний фон
         activeBackgroundStage = new ActiveBackgroundStage(fillViewport, parent.getBackObj());
         backgroundStage = new BackgroundStage(fillViewport);
 

@@ -67,6 +67,7 @@ public class FreezeGroup extends Group {
         }
     }
 
+
     public void startAnimation(boolean start_end, Integer timing){
         Actor[] actors = this.getChildren().begin();
         if(start_end){

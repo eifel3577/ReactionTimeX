@@ -11,13 +11,15 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
 //Stage это процессор событий,которые будут исполнять участники данного Stage.Когда Stage получает входящие события,он запускает их
 //на своих участников.Основной метод Stage это act().Этот метод вызывается в единицу времени и обновляет поведение всех участников
 //данного Stage
+//сцена игровых элементов
 public class GameElementsStage extends Stage {
 
+    //стартовое время
     private long startTime;
     //состояние равно 1
     private int state = 1;
 
-    //устанавливает текущее время
+    //устанавливает текущее время как стартовое
     public GameElementsStage(Viewport cam) {
         super(cam);
         startTime = TimeUtils.millis();
@@ -28,7 +30,7 @@ public class GameElementsStage extends Stage {
         this.state = state;
     }
 
-    //получает время прошедшее со стартового времени.Если прошло более 800 миллисекунд,устанавливает
+    //получает время прошедшее со стартового времени.Если прошло более 0,8 секунды,устанавливает
     //текущее время как новое стартовое время
     @Override
     public void act(float DeltaTime) {

@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import java.util.Random;
 
-
+//дрожание экрана
 public class ScreenShake {
     private float elapsed, duration, intensity;
     private Random random = new Random();

@@ -117,6 +117,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
 
     @Override
     public void show() {
+        //настройки видовых экранов в зависимости от девайса
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
@@ -126,21 +127,24 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
 
         scalingViewport = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
 
+        //подгрузка карты
         TiledMap tiledMap = parent.tiledMap("2_solar_map/map.tmx");
+        //подгрузка шрифтов
         BitmapFont fonts[] = parent.getFonts();
 
         batch = new SpriteBatch();
 
+        //настройка stage
         stage = new Stage(extendViewport);
         backStage = new Stage(fitViewportTop);
 
+        //добавление кнопок Маркет и Назад
         btnGroup = new ButtonGroup(tiledMap.getLayers().get("btn"));
         stage.addActor(btnGroup);
 
-
-
         spineAnimationsStage = new SpineAnimationsStage(extendViewport);
 
+        //настройка анимации "Сундук".второе по счету изображение в левом верхнем углу
         MapObjects objects = tiledMap.getLayers().get("anim").getObjects();
 
         for(MapObject object : objects) {
@@ -159,6 +163,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
             }
         }
 
+        //класс для прослушивания событий нажатий клавиш и тачскрина.Настройка
         InputMultiplexer multiplexer;
         GestureDetector gd = new GestureDetector(this);
         multiplexer = new InputMultiplexer();
@@ -168,11 +173,11 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         Gdx.input.setInputProcessor(multiplexer);
 
         // stage.setDebugAll(true);
-
+        //обработка нажатий кнопки Назад включена
         Gdx.input.setCatchBackKey(true);
         DefaultShader.defaultCullFace = 0;
 
-        //если из 10 планет есть незакрытые, то finished false
+        //если из 10 планет есть непройденые, то finished false
         Boolean finished = true;
         for(int i=1; i<10; i++) {
             if(parent.isClosedPlanet(i)) {
@@ -180,11 +185,15 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
             }
         }
 
+        //если все планеты пройдены
         if(finished)
             finishedSolar();
 
+        //настройка ActiveBackgroundStage,передача видового экрана и массива мелких планет,плывущих по экрану
         activeBackgroundStage = new ActiveBackgroundStage(fillViewport, parent.getBackObj());
 
+        //выбор актеров из слоя карты fillback (это верхнее синее поле вверху экрана на весь экран)
+        //по сути это один актер.Передача актера в stage backStage
         for(MapObject object : tiledMap.getLayers().get("fillBack").getObjects()) {
             if (object instanceof TextureMapObject) {
                 TextureMapObject cell = (TextureMapObject) object;
@@ -193,34 +202,39 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
             }
         }
 
+        //передача в stage backStage 4 акторов из слоя btn_back (кнопка Назад и Маркет и овальное синее поле для отображения очков
         btnBack = new BackgroundGroup(tiledMap.getLayers().get("btn_back"));
         backStage.addActor(btnBack);
 
-
+        //передача в stage backStage актера из слоя txt (количество очков отображаемое в синем овальном поле вверху)
         textGroup = new TextGroup(tiledMap.getLayers().get("txt"), fonts);
         backStage.addActor(textGroup);
-
-
 
         textGroup.setLabel("score", "" + parent.getNumbers("high_score"));
 
         mapStage = new Stage(scalingViewport);
         mapStage2 = new Stage(scalingViewport);
 
+        //передача в mapStage актера по слою map_other (пунктирная полоса через экран)
         BackgroundGroup otherPlanet = new BackgroundGroup(tiledMap.getLayers().get("map_other"));
         mapStage.addActor(otherPlanet);
 
+        //изображения планет с названиями сверху
         planetsGroup = new PlanetsGroup(tiledMap.getLayers().get("map_planets"), parent);
         mapStage.addActor(planetsGroup);
 
+        //кнопки play возле каждой планеты
         planetsBtnGroup = new ButtonGroup(tiledMap.getLayers().get("map_btn"), parent);
         mapStage.addActor(planetsBtnGroup);
 
+        //круги с количеством пройденных уровней по планетам
         PlanetsTextGroup textGroup = new PlanetsTextGroup(tiledMap.getLayers().get("map_text"), fonts, parent);
         mapStage.addActor(textGroup);
 
+
         spineMapStage = new SpineAnimationsStage(scalingViewport);
 
+        //синяя фиговина (космический корабль) между планетами
         objects = tiledMap.getLayers().get("map_anim").getObjects();
 
         for(MapObject object : objects) {
@@ -250,7 +264,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
             }
         }
 
-
+        //количество очков( отображается между планетами)
         textUnlockGroup = new TextGroup(tiledMap.getLayers().get("map_text_2"), fonts);
         mapStage2.addActor(textUnlockGroup);
 
@@ -263,7 +277,9 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         textUnlockGroup.setLabel("unlock_text_7", "1500 RC", Align.center);
         textUnlockGroup.setLabel("unlock_text_8", "3000 RC", Align.center);
 
+
         startCameraY = cameraStartPoints[planet_num - 1];
+        //пользователь когда открывает экран solarMap3d, то автоматически видит часть экрана возле открытой планеты
         scalingViewport.getCamera().position.y = startCameraY;
     }
 
@@ -277,7 +293,9 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
     private float mVelocityY;
     private final float mLowerPosition = 1200f;
     private final float mUpperPosition = 10100f;
+    //вращение
     private Quaternion rotation;
+    //скорость
     private float velocitySum = 0;
 
     @Override
@@ -299,6 +317,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
+        //прорисовка всех дочерних актеров в stage-ах
         stage.act(delta);
         mapStage.act(delta);
         mapStage2.act(delta);
@@ -308,6 +327,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         spineMapStage.act(delta);
 
 
+        //для разных видовых экранов  прорисовка соответствующих stage-ей
         fillViewport.apply();
         batch.setProjectionMatrix(fillViewport.getCamera().combined);
         batch.begin();
@@ -363,10 +383,12 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         scalingViewport.getCamera().update();
     }
 
+    //прорисовка анимации с количеством денег возле планеты
     private void checkAnimations() {
         float cameraY = scalingViewport.getCamera().position.y;
+        //текущая планета
         int nowPlanet = parent.nowPlayPlanet();
-
+        //получает актеров из spineMapStage
         for(int ac=0; ac < spineMapStage.getActors().size; ac++){
             SpineAnimationActor actor = (SpineAnimationActor) spineMapStage.getActors().get(ac);
             String[] detailedName = actor.getName().split("_");
@@ -386,11 +408,13 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
                 }
             }
 
+            //если нет денег, актер с количеством денег не отображается
             if(detailedName[0].equals("unlock") &&  unlockID < nowPlanet - 1) {
                 actor.setVisible(false);
             }
         }
 
+        //проходим по всем актерам с отображением денег между планетами
         for(int i = 0; i < textUnlockGroup.getChildren().size; i++) {
             Actor actor = textUnlockGroup.getChildren().get(i);
             String[] detailedName = actor.getName().split("_");
@@ -415,6 +439,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         }
     }
 
+    //обновление видовых экранов
     @Override
     public void resize(int width, int height) {
         scalingViewport.update(width, height);
@@ -422,7 +447,10 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         fitViewportTop.update(width, height);
         fillViewport.update(width, height, true);
 
+        //TODO какой отступ??? где реализация getIOSSafeAreaInsets()?? возможно причина багов с отображением на айфонах
+
         int offset = extendViewport.getTopGutterHeight() - (int) parent.getIOSSafeAreaInsets().x;
+        Gdx.app.log("offsetIs", String.valueOf(offset));
         backStage.getViewport().setScreenPosition(fitViewportTop.getScreenX(),
                 offset);
     }
@@ -452,14 +480,19 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
     private int selected = -1, selecting = -1;
     private Actor selPlanet;
 
+    //обработка касания экрана, инициализация актеров selActor и selPlanet по координатам нажатия
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
+        //таймер ставится в 0
         mTimer = 0;
+        //преобразует координаты экрана в координаты сцены stage и передает эти координаты в Vector2 pos
         Vector2 pos = stage.screenToStageCoordinates(new Vector2(x, y));
+        //получает актера по нажатым координатам
         selActor = (BtnActor) btnGroup.hit(pos.x, pos.y, true);
 
+        if(selActor!=null) Gdx.app.log("1012", selActor.getName());
         Vector2 planetPos = mapStage.screenToStageCoordinates(new Vector2(x, y));
-
+        //и получает актера по нажатым координатам из mapStage
         selPlanet = planetsBtnGroup.hit(planetPos.x, planetPos.y, true);
         if(selPlanet == null)
             selPlanet = planetsGroup.hit(planetPos.x, planetPos.y, true);
@@ -468,6 +501,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         return false;
     }
 
+    //тап по экрану
     @Override
     public boolean tap(float x, float y, int count, int button) {
         checkBtnClick();
@@ -531,12 +565,14 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
     private final Vector3 pos = new Vector3();
     private GameObject selectedLevel = null;
 
+
     private void checkBtnClick() {
+        //проигрываем звук тапа
         if(selActor != null) {
             parent.tapSound();
-
+            //тип
             String type = selActor.getName();
-
+            //если нажат на маркет или наза,переходы соответственно
             if (type.equals("back"))
                 parent.setScreen(new MainMenuScreen(parent, camera, null));
             if (type.equals("market"))
@@ -551,7 +587,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
 
         } else if(selPlanet != null) {
             String[] name = selPlanet.getName().split("_");
-
+            //нажатие на планету
             goToPlanet(name[name.length - 1]);
         }
     }
@@ -559,9 +595,9 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
 
     private void goToPlanet(String type) {
         int num = Integer.parseInt(type);
-
-
+        //если планета не открыта
         if(num > 0 && !parent.isClosedPlanet(num)) {
+            //случайное число от 1 до 6
             int field_type = 1 + (int) (Math.random() * 5);
 
             String extens = "g3db";

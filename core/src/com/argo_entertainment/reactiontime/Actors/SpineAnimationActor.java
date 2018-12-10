@@ -23,11 +23,15 @@ import com.esotericsoftware.spine.SkeletonJson;
 import com.esotericsoftware.spine.SkeletonRenderer;
 import com.esotericsoftware.spine.SkeletonRendererDebug;
 
+//анимационный актер
 public class SpineAnimationActor extends Actor {
+    //управление анимацией.Применяет анимации с течением времени, ставит в очередь анимации для последующего воспроизведения.
     public AnimationState animationState;
+    //каркас анимационного обьекта
     public Skeleton skeleton;
     public SkeletonRenderer skeletonRenderer;
     public SkeletonRendererDebug debug;
+
 
     private Boolean animation = true;
     private Boolean loop = true;
@@ -38,13 +42,16 @@ public class SpineAnimationActor extends Actor {
 
     private Boolean flip = false;
 
+    //принимает RectangleMapObject, json и данные
     public SpineAnimationActor(RectangleMapObject cell, SkeletonJson json, SkeletonData data) {
         this.json = json;
         this.data = data;
+        //отключает для этого актера кликабельность
         setTouchable(Touchable.disabled);
 
         Float x = cell.getRectangle().getX(), y = cell.getRectangle().getY() + data.getHeight();
 
+        //устанавливает координаты актера,имя и тд
         setWidth(cell.getRectangle().getWidth());
         setHeight(cell.getRectangle().getHeight());
         setPosition(cell.getRectangle().getX(), cell.getRectangle().getY());
@@ -53,6 +60,7 @@ public class SpineAnimationActor extends Actor {
         setBounds(cell.getRectangle().getX(), cell.getRectangle().getY(), cell.getRectangle().getWidth(),
                 cell.getRectangle().getHeight());
 
+        //получает свойство flip если оно есть
         if(cell.getProperties().get("flip") != null)
             flip = cell.getProperties().get("flip", Boolean.class);
 
