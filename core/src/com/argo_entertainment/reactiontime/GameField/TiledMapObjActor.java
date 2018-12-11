@@ -13,7 +13,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 
-
+//актеры для игры (игровые элементы)
 public class TiledMapObjActor extends Actor {
 
     private TextureMapObject celli;
@@ -33,6 +33,7 @@ public class TiledMapObjActor extends Actor {
     Animation<TextureRegion> boomAnimation;
     Animation<TextureRegion> flashAnimation;
     Animation<TextureRegion> disposeAnimation;
+
     float stateTime = 0;
 
     public TiledMapObjActor(TextureMapObject celli, Texture[] textures) {
@@ -42,7 +43,7 @@ public class TiledMapObjActor extends Actor {
 
         int width, height, posX, posY;
         Texture boomAnim, flashAnim, disposeAnim;
-
+        //размеры
         width = 107;
         height = 107;
         posX = 0;
@@ -71,6 +72,7 @@ public class TiledMapObjActor extends Actor {
         return bounds;
     }
 
+    //возвращает актера по координатам
     @Override
     public Actor hit(float x, float y, boolean touchable) {
         if (touchable && this.getTouchable() != Touchable.enabled) return null;
@@ -86,9 +88,12 @@ public class TiledMapObjActor extends Actor {
         bounds.setX((int) pX);
         bounds.setY((int) pY);
     }
+
     private boolean animation = false;
 
+    //принимает стринг с названием скила и инициализирует соответствующую анимацию
     public void skillAnim(String name){
+
         animation = true;
         if(name.equals("boom")){
             nowAnimation = boomAnimation;
@@ -107,10 +112,13 @@ public class TiledMapObjActor extends Actor {
         animation = false;
     }
 
+    //вызывается в единицу времени
     @Override
     public void act(float delta) {
         super.act(delta);
+        //если анимация включена
         if(animation) {
+            //прибавляет прошедшее время к переменной stateTime
             stateTime += Gdx.graphics.getDeltaTime(); // Accumulate elapsed animation time
 
             if(stateTime > 0.3f){
@@ -120,11 +128,12 @@ public class TiledMapObjActor extends Actor {
         }
     }
 
+    //отрисовка игрового элемента
     public void draw(Batch batch, float parentAlpha) {
         temp = batch.getColor();
 
         batch.setColor(new Color(temp.r, temp.g, temp.b, getColor().a));
-
+        //если анимация включена,рисуется анимация
         if(animation){
             // Get current frame of animation for the current stateTime
             TextureRegion currentFrame = nowAnimation.getKeyFrame(stateTime, true);
@@ -132,13 +141,18 @@ public class TiledMapObjActor extends Actor {
             batch.draw(currentFrame, getX(), getY(), getOriginX(), getOriginY(),
                     getWidth(), getHeight(), getScaleX(), getScaleY(), getRotation());
 
-        } else {
+        }
+        //если анимация не включена
+        else {
+            //если не включен multicolor
             if(!multicolor) {
                 if(texture == null) {
 
                     batch.draw(textureRegion, getX(), getY(),
                             getOriginX(), getOriginY(), 135, 135, getScaleX(), getScaleY(), getRotation());
-                } else {
+                }
+
+                else {
 
                     batch.draw(new TextureRegion(texture, 0, 0, this.texture.getWidth(), this.texture.getHeight()), getX(), getY(),
                             getOriginX(), getOriginY(), 135, 135, getScaleX(), getScaleY(), getRotation());

@@ -107,6 +107,7 @@ public class Assets {
         if(soundEnabled) sound.play(0.5f);
     }
 
+    //TODO использовать для таска рандомного воспроизведения
     public static void playVoiceRandom () {
         if(soundEnabled){
             int random_number1 = (int) (Math.random() * 5);

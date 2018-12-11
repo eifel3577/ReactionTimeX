@@ -30,25 +30,34 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.show;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.touchable;
 
-
+//игровая сцена.актеры по этой сцене это игоровые элементы - которые в игре надо двигать пальцем
 public class TiledMapStage extends Stage {
-
+    //игровой элемент
     public TiledMapObjActor selActor;
+    //координаты игрового элемента
     private Vector2 selPos;
-
+    //счет
     public int SCORE;
+
     public int BH;
+    //вибрация включена
     public boolean VIBRO = true;
+    //пауза отключена
     public boolean PAUSE = false;
+
     public long generCount = 1;
+    //стартовое время для заполнения экранов элементами
     private long startTime;
+    //стартовое время для отключения элементов
     private long startTime2;
     private long startTime3;
+    //текстуры
     private Texture[] textures;
     private Texture[] elements;
     private Texture[][] specials;
 
-    //Skills
+    //скилы по дефолту отключены
+    //замедление??
     public boolean slowDown = false;
     public int slowDown_steps = 0;
 
@@ -56,17 +65,20 @@ public class TiledMapStage extends Stage {
     public int flashUnit_count = 0;
     public boolean boom = false;
 
+    //эффект дрожания экрана
     private ScreenShake screenShake;
+
     private GameFieldScreen parent;
 
     private int catchGameElement = 0;
     private int gameElement = 0;
     int generatedGameElement = 0;
 
+    //набор фрагментов текстур
     private TextureRegion elementTexture;
 
     private int elementNum = 0;
-
+    //левелы
     private int[][] hardLevels;
 
     int dragState = 0;
@@ -87,7 +99,6 @@ public class TiledMapStage extends Stage {
     //принимает скрин тренировочная игра
     public TiledMapStage(Viewport cam, Texture[] element, Texture[][] special, Texture[] texture, int[][] hardLvl, TextureRegion gameElement, int elementNum, TutorialGameFieldScreen parent) {
         super(cam);
-        Gdx.app.log("offset", "TiledMapStage вызван");
         startTime = TimeUtils.millis();
         textures = texture;
         elements = element;
@@ -112,6 +123,7 @@ public class TiledMapStage extends Stage {
         this.hardLevels = hardLvl;
     }
 
+
     public void slowDown (int steps){
         slowDown = true;
         slowDown_steps = steps;
@@ -128,32 +140,33 @@ public class TiledMapStage extends Stage {
 
     private int oldBH = -1;
 
-    /**запускает дрожание экрана с заданной продолжительностью, */
+    //выполняется каждую единицу времени
     @Override
     public void act(float DeltaTime) {
         super.act(DeltaTime);
-
+        //эффект дрожания
         screenShake.update(DeltaTime, (OrthographicCamera) getCamera());
 
         //время прошедшее со стартового
         float timeLapsed = TimeUtils.timeSinceMillis(startTime);
 
-        //если время прошедшее со стартового больше hardLevels[BH][2]
+        //если время прошедшее со стартового больше времени уровня
         //устанавливаем стартовое время текущим
         if(timeLapsed > hardLevels[BH][2]){
             startTime = TimeUtils.millis();
+            //если замедление(?) отключено
             if(!slowDown)
             {
                 //генерит нового актера
               newObjects(hardLevels[BH][1]);
             }
-
+            //если скил замедления включен ,slowDown_steps уменьшается на 1
             if(slowDown) slowDown_steps--;
         }
 
-        //время прошедшее с startTime3
+
         timeLapsed = TimeUtils.timeSinceMillis(startTime3);
-        //случайное число от 4 до 10
+
         int iteration = MathUtils.random(4, 10);
 
         if(timeLapsed > (hardLevels[BH][2] * iteration)){
@@ -165,6 +178,7 @@ public class TiledMapStage extends Stage {
             }*/
             if(slowDown) slowDown_steps--;
         }
+
 
         timeLapsed = TimeUtils.timeSinceMillis(startTime2);
 
@@ -179,6 +193,7 @@ public class TiledMapStage extends Stage {
         if(slowDown_steps == 0)
             slowDown = false;
 
+
         oldBH = BH;
 
         if(generatedGameElement != gameElement && elementCatch == 2) {
@@ -188,6 +203,8 @@ public class TiledMapStage extends Stage {
 
     TiledMapObjActor[] disabledActors = null;
 
+
+    //отключение элементов.помещаются в список отключенных и делаются неактивными
     private void disableObjects(int count){
         Array<Actor> actors = getActors();
         actors.shuffle();
@@ -235,15 +252,21 @@ public class TiledMapStage extends Stage {
         else
             this.elementCatch = 0;
     }
+
+
     public void setCatchElement(int count){
+        Gdx.app.log("112","count = "+ String.valueOf(count));
         gameElement = count;
         Array<Actor> actors = getActors();
         actors.shuffle();
 
         int randGenCount = 0;
+        Gdx.app.log("112","generatedGameElement = "+ String.valueOf(generatedGameElement));
         if(generatedGameElement < count) {
+
             for (int i = 0; i < actors.size && randGenCount < count; i++) {
                 if(generatedGameElement == count) break;
+
                 TiledMapObjActor actor = (TiledMapObjActor) actors.get(i);
 
                 if (!actor.isVisible()) {
@@ -316,7 +339,9 @@ public class TiledMapStage extends Stage {
 
     }
 
+    //координаты позиции игрового элемента
     private Vector2 game_el_position = null;
+
     public void setGameElementPosition(Vector2 position){
         game_el_position = position;
     }
@@ -329,7 +354,10 @@ public class TiledMapStage extends Stage {
         return catchGameElement;
     }
 
+    //включение игровых элементов
     private void enableObjects(){
+        //если список отключенных элементов непустой,проходит по нему и по очереди делает каждый элемент включенным
+        //ставит ему type_tx_str в 1
         if(disabledActors != null) {
             int disActors_count = 0;
             for (int i = 0; i < disabledActors.length; i++) {
@@ -348,49 +376,51 @@ public class TiledMapStage extends Stage {
                         ));
             }
         }
-
+        //обнуляет список отключенных элементов
         disabledActors = null;
     }
 
     int multiCount = 0;
 
-    //генерит нового актера
+    //генерит новый игровой элемент на игровом поле
     public void newObjects(int count){
         //получает актеров
         Array<Actor> actors = getActors();
         //перемешивает актеров
         actors.shuffle();
-
+        //в зависимости от уровня разный multiCount
         if(BH == 1) multiCount = 2;
         if(BH == 3) multiCount = 4;
 
-        //случайное число
+        //случайное число от 1 до 1000
         int special = 1 + (int) (Math.random() * 1000);
-        //счетчик новых актеров
+        //счетчик новых игровых элементов
         int newActors_count = 0;
 
-        //проходит по актерам
+        //проходит по игровым элементам
         for (int i = 0; i < actors.size && newActors_count < count; i++) {
-            //приводит каждого актера к типу TiledMapObjActor
+            //приводит каждый элемент к типу TiledMapObjActor
             TiledMapObjActor actor = (TiledMapObjActor)actors.get(i);
 
-            //если актер невидимый
+            //если элемент невидимый
             if (!actor.isVisible()){
-                //увеличиваем счетчик новых актеров на 1
+                //увеличиваем счетчик новых элементов на 1
                 newActors_count++;
-                //случайное число
+                //случайное число от 1 до 5
                 int random_number1 = 1 + (int) (Math.random() * 4);
-
+                //multicolor отключен
                 actor.multicolor = false;
-                //устанавливаем для актера случайную текстуру из массива elements
+                //устанавливаем для элемента случайную текстуру из массива elements
                 actor.texture = elements[random_number1];
                 //случайный цвет текста (?)
                 actor.color_tx_str = "cell_" + random_number1 + "_0";
 
-                //если BH 1 или больше ,а special от 401 до 599
+                //если левел 1 или больше ,а special от 401 до 599 то установка в texture_collect случайного значения из specials
+                //установка названия игрового элемента
                 if(BH >= 1 && special > 400 && special < 600) { //@ToDo: Rewrite this shit like normal logic -_-
 
                     int random_spec = 1 + (int) (Math.random() * multiCount);
+
                     if(random_spec == 4) {
                         actor.multicolor = true;
                         actor.texture_collect = specials[random_spec][1];
@@ -410,6 +440,8 @@ public class TiledMapStage extends Stage {
                 }
 
                 float duration = slowDown ? (0.2f * slowDown_steps) : 0.1f;
+                //действие игрового элемента.При появлении он сначала увеличивается потом снова
+                //уменьшается
                 actor.addAction(
                         sequence(
                                 scaleTo(1f, 1f, duration),
@@ -420,10 +452,11 @@ public class TiledMapStage extends Stage {
                         ));
             }
         }
-
+        //обновляет значение generCount,так как появился новый игровой элемент
         generCount = newActors_count;
     }
 
+    //делает все элементы невидимыми
     public void clearObjects(int count){
         Array<Actor> actors = getActors();
         actors.shuffle();
@@ -440,6 +473,7 @@ public class TiledMapStage extends Stage {
         generCount = newActors_count;
     }
 
+    //взрыв
     private void boomDestroy(Actor center){
         int startPosX, startPosY, PosX, PosY;
 
@@ -488,6 +522,7 @@ public class TiledMapStage extends Stage {
         selActor = null;
     }
 
+    //молния
     private void flashDestroy(Actor center, boolean vert) {
         int startPosX, startPosY, PosX, PosY;
 
@@ -496,6 +531,7 @@ public class TiledMapStage extends Stage {
         PosX = startPosX;
         PosY = startPosY;
 
+        //8 раз
         for(int i = 0; i < 8; i++){
             TiledMapObjActor findActor = (TiledMapObjActor) super.hit(PosX, PosY, true);
             if(findActor != null) {
@@ -555,28 +591,37 @@ public class TiledMapStage extends Stage {
         selActor = null;
     }
 
+    //нажатие на элемент
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         if (selActor != null) {
+            //устанавливает для элемента координаты
             selActor.setPosition(selPos.x, selPos.y);
             selActor.setTouchable(Touchable.enabled);
         }
+
         if(!PAUSE) {
 
+            //координаты элемента
             Vector2 pos = screenToStageCoordinates(new Vector2(screenX, screenY));
+            //получает элемент по этим координатам
             selActor = (TiledMapObjActor) super.hit(pos.x, pos.y, true);
 
 
             if (selActor != null) {
+                //состояние 1
                 dragState = 1;
+
                 if (boom) {
                     boomDestroy(selActor);
                 } else {
+
                     int index = super.getActors().indexOf(selActor, false);
 
-
+                    //позиция нажатого элемента
                     selPos = new Vector2(selActor.getX(), selActor.getY());
                     selActor.setTouchable(Touchable.disabled);
+                    //нажатый элемент увеличивается
                     selActor.addAction(
                             scaleTo(1.25f, 1.25f)
                     );
@@ -588,14 +633,19 @@ public class TiledMapStage extends Stage {
         return super.touchDown(screenX, screenY, pointer, button);
     }
 
+    //перетаскивание
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
+
         if(!PAUSE) {
+
+            //координаты куда идет перетаскивание
             Vector2 pos = screenToStageCoordinates(new Vector2(screenX, screenY));
             if (selActor != null) {
                 selActor.setPosition(pos.x - selActor.getOriginX(), pos.y - selActor.getOriginY());
                 selActor.setXY(pos.x - selActor.getOriginX(), pos.y - selActor.getOriginY());
 
+                //обьект который находится на том месте куда идет перетаскивание
                 TiledMapObjActor with = (TiledMapObjActor) super.hit(pos.x, pos.y, false);
 
                 if (flash) {
@@ -618,6 +668,7 @@ public class TiledMapStage extends Stage {
                     }
                 }
 
+                //если на там месте куда идет перетаскивание есть элемент и у него есть название и его тип 0 (то есть он не неактивноый)
                 if (with != null && with.getName() != null && with.type_tx_str == 0) {
 
 
@@ -625,11 +676,13 @@ public class TiledMapStage extends Stage {
                         selActor.addAction(
                                 sequence(
                                         scaleTo(1f, 1f, 0.05f, Interpolation.smooth2),
+                                        //перемещение
                                         moveTo(selPos.x, selPos.y, 0.10f, Interpolation.swingOut),
                                         touchable(Touchable.enabled)
                                 ));
 
                     } else {
+
                         selActor.skillAnim("flash");
 
                         selActor.addAction(
@@ -646,8 +699,11 @@ public class TiledMapStage extends Stage {
                         }
 
                     }
+                    //состояние 0
                     dragState = 0;
+                    //перетаскиваемый элемент сброшен
                     selActor = null;
+                    //звук и вибрация
                     Assets.playSound(Assets.wallSound);
                     if (VIBRO) Gdx.input.vibrate(20);
                 }
@@ -659,12 +715,17 @@ public class TiledMapStage extends Stage {
 
 
 
+    //отпускание пальца
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        //координаты отпускания
         Vector2 pos = screenToStageCoordinates(new Vector2(screenX, screenY));
+        //элемент который в этих координатах
         TiledMapObjActor with = (TiledMapObjActor) super.hit(pos.x, pos.y, true);
 
+        //не включена бомба
         if(!boom) {
+            //если включена молния и есть перетаскиваемый элемент
             if(flash && selActor != null) {
                 flash = false;
                 if(flashUnit_count != 0) {
@@ -678,17 +739,27 @@ public class TiledMapStage extends Stage {
                 }
             }
 
+
+            //имя перетаскиваемого элемента
             String[] name = selActor != null ? selActor.getName().split("_") : null;
+            //имя элемента который был в точке куда перетащили
             String[] withName = with != null ? with.getName().split("_") : null;
 
+            //если имена и того и другого заканчиваются на 11
             boolean isMultiSel = (name != null && name[2].equals("11"));
             boolean isMultiWith = (withName != null && withName[2].equals("11"));
 
+
+            //если названия обоих соответствуют (желтый-желтый и тп) или названия одного или другого заканчиваются на 11
             if(with != null && with.getName() != null && selActor != null && (with.getName().equals(selActor.getName()) || isMultiSel || isMultiWith)){
+                //случай если названия одного или другого заканчиваются на 11
                 if(isMultiSel || isMultiWith){
+                    //включается на перетаскиваемом элементе анимация dispose
                     selActor.skillAnim("dispose");
+                    //включается на элементе который в месте перетаскивания анимация dispose
                     with.skillAnim("dispose");
                 }
+                //отключается на элементе который в месте перетаскивания кликабельность
                 with.setTouchable(Touchable.disabled);
                 with.addAction(
                         sequence(
@@ -697,12 +768,17 @@ public class TiledMapStage extends Stage {
                                 hide(),
                                 touchable(Touchable.enabled)
                         ));
+                //состояние 3
                 dragState = 3;
+                //название перетаскиваемого элемента заканчивается на 9
                 if(name[2].equals("9")) {
+
+                    //MoveToAction - класс экшн перемещения актера из его текущей позиции в конкретную позицию
                     MoveToAction action = new MoveToAction();
                     action.setPosition(game_el_position.x , game_el_position.y);
                     action.setDuration(0.4f);
                     action.setInterpolation(Interpolation.exp5In);
+                    //действия на перетаскиваемом элементе в последовательности
                     selActor.addAction(sequence(
                             scaleTo(1.5f, 1.5f, 0.2f, Interpolation.smooth),
                             action,
@@ -713,11 +789,13 @@ public class TiledMapStage extends Stage {
                     SCORE++;
                     if(VIBRO) Gdx.input.vibrate(10);
                     Assets.playSound(Assets.clickSound);
+                    //увеличение счетчика очков
                     catchGameElement++;
                     Assets.playVoiceRandom();
-                } else if(!name[2].equals("0"))
-                {
-
+                }
+                //название перетаскиваемого элемента не заканчивается на 0
+                else if(!name[2].equals("0")) {
+                    //действия на перетаскиваемом элементе в последовательности
                     selActor.addAction(
                             sequence(
                                     scaleTo(1.25f, 1.25f, 0.05f, Interpolation.smooth),
@@ -725,13 +803,18 @@ public class TiledMapStage extends Stage {
                                     hide(),
                                     moveTo(selPos.x, selPos.y)
                             ));
+                    //название перетаскиваемого элемента заканчивается на 1
                     if(name[2].equals("1")){
+
                         int sum_score = 0;
+                        //проходит по всем элементам
                         for (Actor actor : getActors()) {
+
                             if(actor.getName() != null && (actor.getName().equals("cell_" + name[1] + "_0") || actor.getName().equals("cell_" + name[1] + "_10"))) {
                                 sum_score++;
 
                                 TiledMapObjActor findActor = (TiledMapObjActor) actor;
+                                //запуск анимации бомба
                                 findActor.skillAnim("boom");
                                 findActor.setTouchable(Touchable.disabled);
 
@@ -754,9 +837,11 @@ public class TiledMapStage extends Stage {
                             Gdx.input.vibrate(30);
                         }
                     }
+                    //название перетаскиваемого элемента заканчивается на 3
                     if(name[2].equals("3")){
                         flashDestroy(with, false);
                     }
+                    //название перетаскиваемого элемента заканчивается на 2
                     if(name[2].equals("2")){
                         flashDestroy(with, true);
                     }
