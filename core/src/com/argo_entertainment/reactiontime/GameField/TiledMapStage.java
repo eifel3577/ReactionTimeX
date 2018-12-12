@@ -523,6 +523,7 @@ public class TiledMapStage extends Stage {
     }
 
     //молния
+    //получает элемент который был в ячейке куда перетаскивали
     private void flashDestroy(Actor center, boolean vert) {
         int startPosX, startPosY, PosX, PosY;
 
@@ -533,6 +534,7 @@ public class TiledMapStage extends Stage {
 
         //8 раз
         for(int i = 0; i < 8; i++){
+            //
             TiledMapObjActor findActor = (TiledMapObjActor) super.hit(PosX, PosY, true);
             if(findActor != null) {
                 findActor.skillAnim("flash");

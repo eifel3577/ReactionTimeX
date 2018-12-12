@@ -4,16 +4,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
-
-import java.util.Random;
 
 public class Assets {
     public static boolean soundEnabled = false;
     public static Music music;
-    public static Music music1;
-    public static Music music2;
-
 
     public static Sound clickSound;
 
@@ -38,26 +32,10 @@ public class Assets {
     }
 
     public static void load () {
-
-        //TODO реализовать воспроизведение треков в ранодомном порядке
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/main.mp3"));
-        music1 = Gdx.audio.newMusic(Gdx.files.internal("sounds/main2.mp3"));
-        music2 = Gdx.audio.newMusic(Gdx.files.internal("sounds/main3.mp3"));
-
-        Music[] arrayMusic = {music,music1,music2};
-        shuffleArray(arrayMusic);
-
-        if(soundEnabled) {
-            for(int i=0;i<arrayMusic.length;i++){
-                arrayMusic[i].setVolume(0.8f);
-                arrayMusic[i].play();
-            }
-            //Music randomMusic = arrayMusic[MathUtils.random(0,2)];
-            //randomMusic.setVolume(0.8f);
-            //randomMusic.play();
-        }
-
-
+        music.setLooping(true);
+        music.setVolume(0.8f);
+        if(soundEnabled) music.play();
 
 
         flash_1 = Gdx.audio.newSound(Gdx.files.internal("sounds/Thunder1.mp3"));
@@ -85,17 +63,6 @@ public class Assets {
 
     }
 
-
-    public static void shuffleArray(Music[]musics){
-        Random random = new Random();
-        for(int i = musics.length - 1;i > 0;i--){
-            int index = random.nextInt(i+1);
-            Music randomMusic = musics[index];
-            musics[index] = musics[i];
-            musics[i] = randomMusic;
-        }
-    }
-
     public static void playMusic (Music sound) {
         if(soundEnabled) { sound.setVolume(0.9f);  if(sound.isPlaying()) sound.stop(); else sound.play(); }
     }
@@ -107,7 +74,6 @@ public class Assets {
         if(soundEnabled) sound.play(0.5f);
     }
 
-    //TODO использовать для таска рандомного воспроизведения
     public static void playVoiceRandom () {
         if(soundEnabled){
             int random_number1 = (int) (Math.random() * 5);

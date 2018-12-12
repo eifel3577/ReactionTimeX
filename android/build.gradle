@@ -142,5 +142,6 @@ idea {
 dependencies {
     implementation "com.google.android.gms:play-services-games:${gms_library_version}"
     implementation "com.google.android.gms:play-services-auth:${gms_library_version}"
+    implementation 'com.facebook.android:facebook-share:[4,5)'
     implementation "com.android.support:appcompat-v7:27.1.1"
 }

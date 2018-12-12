@@ -14,8 +14,10 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
+//группа актеров взрыва
 public class BoomGroup extends Group {
 
+    //принимает слой из карты и шрифты
     public BoomGroup(MapLayer layer, BitmapFont[] font){
         if(layer != null) {
             for (MapObject object : layer.getObjects()) {
@@ -32,10 +34,12 @@ public class BoomGroup extends Group {
 
                 }
             }
+
             startAnimation(false);
         }
     }
 
+    //принимает только слой карты,без шрифтов
     public BoomGroup(MapLayer layer){
         if(layer != null) {
             for (MapObject object : layer.getObjects()) {
@@ -52,7 +56,9 @@ public class BoomGroup extends Group {
         }
     }
 
+    //анимация для актеров взрыв
     public void startAnimation(boolean start_end){
+        //массив актеров из BoomGroup
         Actor[] actors = this.getChildren().begin();
         if(start_end){
             for(Actor animActor : actors){

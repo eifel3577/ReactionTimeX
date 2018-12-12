@@ -70,9 +70,11 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 //главный игровой экран
 public class GameFieldScreenX implements Screen, GestureDetector.GestureListener {
+
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;
+    //рендереры
     private OrthogonalTiledMapRenderer pauseMapRenderer;
     private OrthogonalTiledMapRenderer finalMapRenderer;
     private OrthogonalTiledMapRenderer doneMapRenderer;
@@ -129,6 +131,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
     float middleBoomAlpha = 0f;
 
+
     private float[][] elementsTimer = new float[][] {
             {60f, 15f, 30f, 30f},
             {120f, 15f, 30f, 30f},
@@ -141,6 +144,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
             {330f, 15f, 30f, 15f},
     };
 
+    //коины
     private int[] coinsByOne = new int[] {
             1,1,1,1,2,2,4,4,4
     };
@@ -214,6 +218,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
         //настройка скорости игры
         for(int i = 0; i < 4; i++){
+
             elementsTimer[planetNum - 1][i] += elementsTimer[planetNum - 1][i] * (0.3 * (elementNum - 1));
         }
 
@@ -261,7 +266,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
 
     @Override
     public void show() {
-
+        //настройка видовых экранов под разные девайсы
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
 
@@ -706,6 +711,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         Gdx.input.setInputProcessor(multiplexer);
     }
 
+    //установка игровых значений
     private void setData() {
         //установлена ли вибрация
         stage.VIBRO = parent.getSettings("vibro");

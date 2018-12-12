@@ -40,6 +40,7 @@ import com.esotericsoftware.spine.SkeletonJson;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
+//вызывается при нажатии на красную кнопку + в левом верхнем углу экрана MainMenu возле суммы денег
 public class PurchasesScreen implements Screen, GestureDetector.GestureListener {
     private ReactionTimeClass parent;
 
@@ -88,6 +89,7 @@ public class PurchasesScreen implements Screen, GestureDetector.GestureListener 
 
     @Override
     public void show() {
+        Gdx.app.log("navigation", "PurchasesScreen");
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
@@ -196,8 +198,10 @@ public class PurchasesScreen implements Screen, GestureDetector.GestureListener 
     private final float mUpperPosition = 960f;
 
     private Boolean animated = false;
+
     @Override
     public void render(float delta) {
+        //отображаем количество коинов
         if( oldCoins < parent.getNumbers("coins"))
         {
             textGroup.setLabel("coins", parent.getNumbers("coins").toString());

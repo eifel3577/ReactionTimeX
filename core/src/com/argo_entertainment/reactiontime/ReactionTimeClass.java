@@ -511,6 +511,6 @@ public class ReactionTimeClass extends Game {
 
 	@Override
 	public void pause () {
-		 pauseMusic();
+		 //pauseMusic();
 	}
 }

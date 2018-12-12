@@ -433,14 +433,19 @@ public class MainMenuScreen implements Screen, GestureListener {
 
             if (type.equals("play"))
                 parent.setScreen(new SolarMap2D(parent, camera, this, parent.nowPlayPlanet()));
+            //настройки
             else if (type.equals("settings"))
                 parent.setScreen(new SettingsMenuScreen(parent, camera, this));
+            //маркет
             else if (type.equals("market"))
                 parent.setScreen(new ShopScreen(parent, camera, this));
+
             else if (type.equals("personal"))
                 parent.setScreen(new StatsScreen(parent, camera, this));
+
             else if (type.equals("initScore"))
                 parent.setScreen(new StatsScreen(parent, camera, this));
+            //рекорды
             else if (type.equals("playScrore"))
                 parent.setScreen(new RatingScreen(parent, camera, this));
             else if (type.equals("skill"))

@@ -38,6 +38,7 @@ import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonJson;
 
 public class RatingScreen implements Screen, GestureDetector.GestureListener {
+
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;
@@ -61,6 +62,7 @@ public class RatingScreen implements Screen, GestureDetector.GestureListener {
     private float VIRTUAL_WIDTH = 1080, VIRTUAL_HEIGHT = 1920;
 
     public RatingScreen(ReactionTimeClass game, OrthographicCamera game_camera, Screen back){
+        Gdx.app.log("navigation", "RatingScreen");
         // back.dispose();
         parent = game;
         camera = game_camera;
@@ -72,6 +74,7 @@ public class RatingScreen implements Screen, GestureDetector.GestureListener {
 
     @Override
     public void show() {
+        Gdx.app.log("navigation", "RatingScreen");
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);

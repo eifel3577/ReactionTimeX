@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 public class ElementActor extends Actor {
+
     public TextureMapObject cell;
     public String type;
     public boolean state = false;
@@ -70,6 +71,7 @@ public class ElementActor extends Actor {
     }
 
     int planetNum = 1, elementNum = 1;
+
     public void setState(int planet, int element) {
         planetNum = planet;
         elementNum = element;
@@ -79,6 +81,7 @@ public class ElementActor extends Actor {
         return state;
     }
 
+    //прорисовывает на экране магазина в кружках 0/1 , 0/6 и тд
     public void draw(Batch batch, float parentAlpha) {
 
         Color color = getColor();

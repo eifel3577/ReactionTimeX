@@ -30,6 +30,7 @@ import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonJson;
 
+//настройки
 public class SettingsMenuScreen implements Screen, GestureDetector.GestureListener {
     private ReactionTimeClass parent;
 
@@ -51,6 +52,7 @@ public class SettingsMenuScreen implements Screen, GestureDetector.GestureListen
     private float VIRTUAL_WIDTH = 1080, VIRTUAL_HEIGHT = 1920;
 
     public SettingsMenuScreen(ReactionTimeClass game, OrthographicCamera game_camera, Screen back){
+
         // back.dispose();
         parent = game;
         camera = game_camera;
@@ -62,12 +64,14 @@ public class SettingsMenuScreen implements Screen, GestureDetector.GestureListen
 
     @Override
     public void show() {
+        Gdx.app.log("navigation", "SettingsMenuScreen");
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
-        fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
 
+        fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
         fitViewport = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         fillViewport = new FillViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
+
         TiledMap tiledMap = parent.tiledMap("settings/map.tmx");
 
         batch = new SpriteBatch();
@@ -94,6 +98,7 @@ public class SettingsMenuScreen implements Screen, GestureDetector.GestureListen
 
         spineAnimationsStage = new SpineAnimationsStage(new FillViewport(1080, 1920, camera));
 
+        //анимация сундука
         MapObjects objects = tiledMap.getLayers().get("top_anim").getObjects();
 
         for(MapObject object : objects) {

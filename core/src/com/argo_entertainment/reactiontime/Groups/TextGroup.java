@@ -89,16 +89,23 @@ public class TextGroup extends Group {
         }
     }
 
+    //принимает номер планеты и Game-класс.Грузит из сохраненного массива savedGameElements Game-класса
+    //инфу,соотвтетсвенно инициализирует actor state либо 1 либо 0
     public void setBackPlanet(int planetNum, ReactionTimeClass parent) {
+        //получает всех актеров по группе textgroup
         for (Actor element :getChildren()) {
             if (element instanceof OtherActor) {
                 OtherActor actor = (OtherActor) element;
                 String[] name = actor.getName().split("_");
+                //если название актера label
                 if (name[0].equals("label")) {
-                    int elementNum = Integer.parseInt(name[2]);
-                    Integer[] elements = parent.getSavedElements(planetNum, elementNum);
 
+                    int elementNum = Integer.parseInt(name[2]);
+                    //берет массив сохраненных элементов
+                    Integer[] elements = parent.getSavedElements(planetNum, elementNum);
+                    //устанавливает state 0 или 1
                     if (elements[0].equals(elements[1])) {
+                        //TODO setState разобрать что делает
                         actor.setState(1);
                     } else {
                         actor.setState(0);

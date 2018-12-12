@@ -98,6 +98,7 @@ public class StatsScreen implements Screen, GestureDetector.GestureListener {
     private float VIRTUAL_WIDTH = 1080, VIRTUAL_HEIGHT = 1920;
 
     public StatsScreen(ReactionTimeClass game, OrthographicCamera game_camera, Screen back){
+
         // back.dispose();
         parent = game;
         camera = game_camera;
@@ -107,6 +108,7 @@ public class StatsScreen implements Screen, GestureDetector.GestureListener {
 
     @Override
     public void show() {
+        Gdx.app.log("navigation", "StatsScreen");
         parent.assetManager.load("stat/stat_map.tmx", TiledMap.class);
         parent.assetManager.load("3d_models/ship/ship_1.g3db", Model.class);
         parent.assetManager.finishLoading();

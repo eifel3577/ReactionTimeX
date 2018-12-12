@@ -56,7 +56,9 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.rotateBy;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.scaleTo;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
+
 public class ShopScreen implements Screen, GestureDetector.GestureListener {
+
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;
@@ -87,6 +89,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
     private FillViewport fillViewport;
     private FitViewport fitViewport;
     private ScalingViewport fitViewportTop;
+
     private float VIRTUAL_WIDTH = 1080, VIRTUAL_HEIGHT = 1920;
 
     private TextureAtlas atlas;
@@ -102,6 +105,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
 
     @Override
     public void show() {
+
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
@@ -113,42 +117,49 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         BitmapFont[] font = parent.getFonts();
 
         batch = new SpriteBatch();
+        //летающие планеты заднего фона
         activeBackgroundStage = new ActiveBackgroundStage(fillViewport, parent.getBackObj());
+
 
         stage = new Stage(fitViewport);
         top_stage = new Stage(fitViewportTop);
 
-
+        //верхняя часть экрана синяя
         BackgroundGroup btnBack = new BackgroundGroup(tiledMap.getLayers().get("top_back"));
         top_stage.addActor(btnBack);
-
+        //кнопки + назад и сундук
         ButtonGroup topBtnGroup = new ButtonGroup(tiledMap.getLayers().get("top_btn"));
         top_stage.addActor(topBtnGroup);
-
+        //количество очков
         upTextGroup = new TextGroup(tiledMap.getLayers().get("top_txt"), font);
         top_stage.addActor(upTextGroup);
 
 
-
+        //кнопки влево вправо и шесть кнопок товаров
         bgGroup = new BackgroundGroup(tiledMap.getLayers().get("menu_bg"));
         stage.addActor(bgGroup);
 
+        //синие круги товаров
         elementGroup = new ElementGroup(tiledMap.getLayers().get("elements"), parent.getBigElements(1,1), true);
         stage.addActor(elementGroup);
 
+        //кнопка самой планеты с красным полем unlock,и красные поля под каждой планетой
         btnGroup = new ButtonGroup(tiledMap.getLayers().get("btn"));
         stage.addActor(btnGroup);
-
+        //синие кружочки возле каждого товара и белая надпись количество RM
         textGroup = new TextGroup(tiledMap.getLayers().get("txt"), font);
         textGroup.setBackPlanet(planetNum, parent);
         stage.addActor(textGroup);
 
+        //пауза 0.1
         float pause = 0.1f;
 
+        //проходит по синим кругам товаров
         for(Actor elementActor : elementGroup.getChildren()){
             String[] name = elementActor.getName().split("_");
 
             int num = -1;
+
             if(name[0].equals("element")) {
                 num = Integer.parseInt(name[1]);
 
@@ -159,6 +170,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
 
                 setActionElement(elementActor, 0, num);
             }
+
             ((ElementActor) elementActor).setState(planetNum, num);
         }
 
@@ -180,8 +192,9 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
             }
         }
 
+        //установка обработки нажатия кнопки Назад
         setControls();
-
+        //загружает количество коинов
         coins = parent.getNumbers("coins");
     }
 
@@ -207,18 +220,19 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
             }
     };
 
+    //прорисовка каждую единицу времени
     @Override
     public void render(float delta) {
-
+        //все актеры с именем closed видимы или невидимы в зависимости от флага closed
         btnGroup.findActor("closed").setVisible(closed);
-
+        //устанавливает для каждого синего круга соотвтетсвующую сумму RM
         textGroup.setLabel("elem_1", elementsPrice[planetNum - 1][0] + " RM");
         textGroup.setLabel("elem_2", elementsPrice[planetNum - 1][1] + " RM");
         textGroup.setLabel("elem_3", elementsPrice[planetNum - 1][2] + " RM");
         textGroup.setLabel("elem_4", elementsPrice[planetNum - 1][3] + " RM");
         textGroup.setLabel("elem_5", elementsPrice[planetNum - 1][4] + " RM");
         textGroup.setLabel("elem_6", elementsPrice[planetNum - 1][5] + " RM");
-
+        //устанавливает значения 0/1, 2/2 и тд
         textGroup.setLabel("elem_count_1", parent.getSavedElements(planetNum, 1)[0] + "/" + parent.getSavedElements(planetNum, 1)[1]);
         textGroup.setLabel("elem_count_2", parent.getSavedElements(planetNum, 2)[0] + "/" + parent.getSavedElements(planetNum, 2)[1]);
         textGroup.setLabel("elem_count_3", parent.getSavedElements(planetNum, 3)[0] + "/" + parent.getSavedElements(planetNum, 3)[1]);
@@ -226,7 +240,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         textGroup.setLabel("elem_count_5", parent.getSavedElements(planetNum, 5)[0] + "/" + parent.getSavedElements(planetNum, 5)[1]);
         textGroup.setLabel("elem_count_6", parent.getSavedElements(planetNum, 6)[0] + "/" + parent.getSavedElements(planetNum, 6)[1]);
 
-
+        //пишет количество коинов
         upTextGroup.setLabel("coins", "" + coins);
 
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -234,12 +248,13 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
 
         camera.update();
 
+        //act для всех актеров во всех сценах
         stage.act(delta);
         top_stage.act(delta);
         activeBackgroundStage.act(delta);
         spineAnimationsStage.act(delta);
 
-
+        //прорисовка
         fillViewport.apply();
         batch.setProjectionMatrix(fillViewport.getCamera().combined);
         batch.begin();
@@ -266,6 +281,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         batch.end();
     }
 
+    //обновления видовых экранов
     @Override
     public void resize(int width, int height) {
         fitViewport.update(width, height);
@@ -306,10 +322,11 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
 
     private BtnActor selActor;
 
+    //обработка клика
     private void checkBtnClick() {
         if(selActor != null) {
             parent.tapSound();
-
+            //получает тип актера
             String type = selActor.getName();
             if (type.equals("back")) {
                 goBack();
@@ -322,6 +339,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
             if (type.equals("prev"))
                 if(planetNum > 1) changePlanet(planetNum - 1); else changePlanet(9);
 
+            //при закрытии экрана магазина сохраняет значения
             if(type.equals("closed") && !parent.isClosedPlanet(planetNum - 1)) {
 
                 for(int i=1; i<=6; i++) {
@@ -354,7 +372,9 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         }
     }
 
+    //TODO хз что делает
     private void setActionElement(Actor elementActor, float pause, int num) {
+        //очищает актера от всех действий
         elementActor.clearActions();
 
         if (pause != 0f) {
@@ -389,10 +409,12 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         }
     }
 
+    //получает номер планеты
     private void changePlanet(int planet){
         planetNum = planet;
         float pause = 0.1f;
         elementGroup.clearActions();
+
         for(Actor elementActor : elementGroup.getChildren()){
             String[] name = elementActor.getName().split("_");
 
@@ -437,6 +459,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
 
     }
 
+    //обработка нажатия на кнопке Назад
     private void setControls() {
         InputMultiplexer multiplexer;
 
@@ -494,14 +517,17 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         Gdx.input.setInputProcessor(multiplexer);
     }
 
+    //возврат на предыдущий скрин
     private void goBack() {
         parent.setScreen(back);
     }
 
+    //получает координаты тапа
     private void findActor(Vector2 coords){
         Vector2 pos = stage.screenToStageCoordinates(coords);
         selActor = (BtnActor) stage.hit(pos.x, pos.y, true);
         if(selActor != null) {
+            //обрабатывает клик
             checkBtnClick();
         } else {
             selActor = (BtnActor) top_stage.hit(pos.x, pos.y, true);
@@ -509,6 +535,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         }
     }
 
+    //нажатие на экран, инициализирует актера типа BtnActor
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
         Vector2 pos = stage.screenToStageCoordinates(new Vector2(x, y));
@@ -520,6 +547,7 @@ public class ShopScreen implements Screen, GestureDetector.GestureListener {
         return false;
     }
 
+    //касание экрана
     @Override
     public boolean tap(float x, float y, int count, int button) {
         findActor(new Vector2(x, y));

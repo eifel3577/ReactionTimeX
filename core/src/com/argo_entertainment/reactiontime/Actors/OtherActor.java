@@ -59,6 +59,7 @@ public class OtherActor extends Actor {
         super.act(delta);
     }
 
+
     public void setState(int state){
         if(cell != null) {
             texture.setRegion((int) getWidth() * state, 0, (int) getWidth(), (int) getHeight());
