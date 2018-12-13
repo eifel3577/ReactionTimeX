@@ -1,13 +1,17 @@
 package com.argo_entertainment.reactiontime;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 
 public class Assets {
     public static boolean soundEnabled = false;
     public static Music music;
+    public static Music music1;
+    public static Music music2;
 
     public static Sound clickSound;
 
@@ -26,6 +30,7 @@ public class Assets {
     public static Sound niceWork;
     public static Sound flash_1, flash_2;
     public static Sound[] rndVoices = new Sound[6];
+    public static Music[] musics = new Music[3];
 
     public static Texture loadTexture (String file) {
         return new Texture(Gdx.files.internal(file));
@@ -33,10 +38,14 @@ public class Assets {
 
     public static void load () {
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/main.mp3"));
-        music.setLooping(true);
-        music.setVolume(0.8f);
-        if(soundEnabled) music.play();
+        music1 = Gdx.audio.newMusic(Gdx.files.internal("sounds/main2.mp3"));
+        music2 = Gdx.audio.newMusic(Gdx.files.internal("sounds/main3.mp3"));
 
+        musics[0] = music;
+        musics[1] = music1;
+        musics[2] = music2;
+
+        playingBackgroundLoop(false);
 
         flash_1 = Gdx.audio.newSound(Gdx.files.internal("sounds/Thunder1.mp3"));
         flash_2 = Gdx.audio.newSound(Gdx.files.internal("sounds/Thunder2.mp3"));
@@ -86,6 +95,142 @@ public class Assets {
     }
 
     public static void setMusic (boolean enable) {
-        if(!enable) music.stop(); else music.play();
+        if(!enable) stopBackgroundMusic(); else playBackgroundMusic(enable);
     }
+
+    public static void playMusicAfterEnable(){
+        playingBackgroundLoop(true);
+    }
+
+
+    public static void playBackgroundMusic(boolean soundEnabled){
+        if(soundEnabled){
+            playingBackgroundLoop(false);
+        }
+    }
+
+    public static void disableMusic(){
+        Preferences prefs = Gdx.app.getPreferences("settings.prefs");
+        if(musics[0].isPlaying()){
+            prefs.putInteger("saved_track", 1);
+            prefs.flush();
+        }
+        if(musics[1].isPlaying()){
+            prefs.putInteger("saved_track", 2);
+            prefs.flush();
+        }
+        if(musics[2].isPlaying()){
+            prefs.putInteger("saved_track", 3);
+            prefs.flush();
+        }
+        Assets.setMusic(false);
+    }
+
+    public static void resumeMusic(){
+        Assets.playMusicAfterEnable();
+    }
+
+    public static boolean playingBackgroundLoop(boolean afterEnable){
+        boolean isPlay = false;
+
+        if(afterEnable){
+            Preferences prefs = Gdx.app.getPreferences("settings.prefs");
+            int trackNumber = prefs.getInteger("saved_track", 0);
+
+            if(trackNumber==1){
+                musics[0].setVolume(0.8f);
+                musics[0].play();
+                isPlay = true;
+                musics[0].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+
+            }
+            if(trackNumber==2){
+                musics[1].setVolume(0.8f);
+                musics[1].play();
+                isPlay = true;
+                musics[1].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+            }
+            if(trackNumber==3){
+                musics[2].setVolume(0.8f);
+                musics[2].play();
+                isPlay = true;
+                musics[2].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+            }
+
+        }
+
+        else {
+
+            if (musics[0].isPlaying()||musics[1].isPlaying()||musics[2].isPlaying()) {
+                return true;
+            }
+
+            int rand = MathUtils.random(0, 2);
+
+            if (rand != 1 && rand != 2) {
+                musics[0].setVolume(0.8f);
+                musics[0].play();
+                isPlay = true;
+                musics[0].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+            }
+
+            if (rand != 0 && rand != 2) {
+                musics[1].setVolume(0.8f);
+                musics[1].play();
+                isPlay = true;
+                musics[1].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+            }
+
+            if (rand != 0 && rand != 1) {
+                musics[2].setVolume(0.8f);
+                musics[2].play();
+                isPlay = true;
+                musics[2].setOnCompletionListener(new Music.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(Music music) {
+                        playingBackgroundLoop(false);
+                    }
+                });
+            }
+        }
+
+        return isPlay;
+    }
+
+    public static void stopBackgroundMusic(){
+        if(playingBackgroundLoop(false)){
+            if(musics[0].isPlaying()) musics[0].stop();
+            if(musics[1].isPlaying()) musics[1].stop();
+            if(musics[2].isPlaying()) musics[2].stop();
+        }
+    }
+
+
+
+
 }

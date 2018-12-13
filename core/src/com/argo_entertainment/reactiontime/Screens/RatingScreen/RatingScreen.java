@@ -77,8 +77,8 @@ public class RatingScreen implements Screen, GestureDetector.GestureListener {
         Gdx.app.log("navigation", "RatingScreen");
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
-        fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
 
+        fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
         fitViewport = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         fillViewport = new FillViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
 

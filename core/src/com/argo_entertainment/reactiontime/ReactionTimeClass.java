@@ -214,7 +214,9 @@ public class ReactionTimeClass extends Game {
 		if(name.equals("sound"))
 			if(value) startSound(); else stopSound();
 		if(name.equals("music"))
-			if(value) startMusic(); else stopMusic();
+			//test
+			if(value) Assets.resumeMusic(); else Assets.disableMusic();
+			//if(value) startMusic(); else stopMusic();
 	}
 
 	//фиксирует запись в преф
@@ -468,6 +470,8 @@ public class ReactionTimeClass extends Game {
 	public void startMusic() {
 		Assets.setMusic(true);
 	}
+
+
 
 	//ставит фоновую музыку на паузу
 	public void pauseMusic() {
