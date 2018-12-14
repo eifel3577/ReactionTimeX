@@ -56,7 +56,7 @@ public class PurchasesScreen implements Screen, GestureDetector.GestureListener 
     private BackgroundGroup bgGroup;
     private TextGroup textGroup;
     private TextGroup listTextGroup;
-
+    //коинов по умолчанию 0
     private Integer oldCoins = 0;
 
 
@@ -79,6 +79,7 @@ public class PurchasesScreen implements Screen, GestureDetector.GestureListener 
         parent = game;
         camera = game_camera;
         this.back = back;
+        //загрузка ресурсов
         parent.assetManager.load("buy_new/buy_map.tmx", TiledMap.class);
         parent.assetManager.load("anim/card1/card1.atlas", TextureAtlas.class);
         parent.assetManager.load("anim/card2/card2.atlas", TextureAtlas.class);

@@ -35,6 +35,7 @@ import com.esotericsoftware.spine.SkeletonJson;
 
 
 public class BuySkillScreen implements Screen, GestureDetector.GestureListener {
+
     private ReactionTimeClass parent;
 
     private OrthographicCamera camera;

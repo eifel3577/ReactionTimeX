@@ -18,6 +18,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
 //Stage это процессор событий,которые будут исполнять участники данного Stage.Когда Stage получает входящие события,он запускает их
 //на своих участников.Основной метод Stage это act().Этот метод вызывается в единицу времени и обновляет поведение всех участников
 //данного Stage
+//
 public class ActiveBackgroundStage extends Stage {
     //стартовое время
     private long startTime;

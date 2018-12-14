@@ -80,10 +80,10 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
 
 
     private ReactionTimeClass parent;
-
     private OrthographicCamera camera;
-
+    //камера для обработки 3D
     public PerspectiveCamera cam;
+    //контроллер прокрутки планеты
     public CameraInputLevel camController;
     public ModelBatch modelBatch;
     public AssetManager assets;
@@ -153,6 +153,7 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
 
         int height = 1920;
         if(Gdx.graphics.getHeight() > 1920) height = Gdx.graphics.getHeight();
+
         fitViewportTop = new ScalingViewport(Scaling.fillX, VIRTUAL_WIDTH, height);
         fitViewport = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         fitViewportBottom = new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
@@ -166,6 +167,7 @@ public class LevelScreenBack implements Screen, GestureDetector.GestureListener 
         light2 = new PointLight().set(new Color(255, 255, 255 , 1), new Vector3(2f, 3f, -7.134f), 5f);
         //environment.add(light2);
 
+        //камера с перспективной проекцией для 3d
         cam = new PerspectiveCamera(67, VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         cam.position.set(2f, 3f, -7.134f);
         cam.lookAt(0f,-1.5f,0f);

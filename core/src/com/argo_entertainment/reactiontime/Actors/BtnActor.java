@@ -1,5 +1,6 @@
 package com.argo_entertainment.reactiontime.Actors;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -49,7 +50,7 @@ public class BtnActor extends Actor {
         return this.cell;
     }
 
-    //возвращает TextureMapObject
+    //возвращает Rectangle
     public Rectangle getBounds() {
         return bounds;
     }
@@ -71,6 +72,7 @@ public class BtnActor extends Actor {
 
     //обработка клика на акторе (в данном случае кнопке)
     public void setClick(boolean click) {
+        Gdx.app.log("1412", "CLICK setClick");
         if(cell != null) {
             if(click) {
                 cell.getTextureRegion().setRegion(0, 0, (int) getWidth(), (int) getHeight());
@@ -82,6 +84,7 @@ public class BtnActor extends Actor {
     }
 
     public void setChecked(boolean click) {
+        Gdx.app.log("1412", "CLICK setchecked");
         if(cell != null) {
             if(click) {
                 cell.getTextureRegion().setRegion(0, 0, (int) getWidth(), (int) getHeight());

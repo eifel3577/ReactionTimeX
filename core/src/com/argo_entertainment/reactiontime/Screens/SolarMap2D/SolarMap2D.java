@@ -447,10 +447,7 @@ public class SolarMap2D implements Screen, GestureDetector.GestureListener {
         fitViewportTop.update(width, height);
         fillViewport.update(width, height, true);
 
-        //TODO какой отступ??? где реализация getIOSSafeAreaInsets()?? возможно причина багов с отображением на айфонах
-
         int offset = extendViewport.getTopGutterHeight() - (int) parent.getIOSSafeAreaInsets().x;
-        Gdx.app.log("offsetIs", String.valueOf(offset));
         backStage.getViewport().setScreenPosition(fitViewportTop.getScreenX(),
                 offset);
     }
