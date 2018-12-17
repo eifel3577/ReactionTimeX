@@ -102,6 +102,8 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
     private boolean finished = false;
     private int BLACK_HOLES = 0;
     private int lastUp;
+    //TODO test 1712
+    private int energyLevel;
 
     private boolean flash = false;
     private boolean boom = false;
@@ -259,6 +261,10 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
         elementsType = type;
 
         savedEl = parent.getSavedElements(planetNum, elementNum);
+        //TODO test 1712
+        energyLevel = parent.getEnergyLevel();
+        Gdx.app.log("test3454", "количество энергии в игровом классе = "+String.valueOf(parent.getEnergyLevel()));
+        if(energyLevel==0) Gdx.app.log("test3454","energyLevel = 0,level is not accepted, you must bye energy!");
     }
 
     //массив для хранения сохраненных элементов
@@ -972,7 +978,11 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
             if(!finished)  {
                 if(!gameOver) Assets.playVoice(Assets.gameOver);
                 gameOver = true;
-
+                //TODO test 1712
+                //уменьшатся на 1 уровень энергии
+                parent.setEnergyLevel(energyLevel-1);
+                //запуск восстановления
+                parent.startRecoveryEnergy();
                 if(parent.getNumbers("coins") < 100) {
                     if(planetNum < 9 && !parent.isClosedPlanet(planetNum + 1)) {
                         int field_type = 1 + (int) (Math.random() * 5);
@@ -988,6 +998,8 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
                     gameOverSpineAnimationsStage.getActor("100_continue").;
                 }*/
             } else {
+
+                Gdx.app.log("test1712", "game over!");
                 finalGame = true;
                 backgroundStage.setBgState("pause_bg", true);
                 parent.setSettings("last_score", stage.SCORE);
@@ -1311,6 +1323,7 @@ public class GameFieldScreenX implements Screen, GestureDetector.GestureListener
             }
 
             if(gameOver){
+
                 gameOverMapRenderer.setView((OrthographicCamera) fillViewport.getCamera());
                 gameOverMapRenderer.render();
 

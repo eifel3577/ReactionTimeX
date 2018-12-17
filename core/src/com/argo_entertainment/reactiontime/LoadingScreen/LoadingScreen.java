@@ -204,6 +204,12 @@ public class LoadingScreen implements Screen {
         elementsSprite = new Texture("game/game_elements/game_big_element.png");
         parent.setBigGameElements(elementsSprite);
 
+        //TODO test 1712
+        //если в префе ранее не были сохранены значения,то по дефолту 5
+        if(parent.getEnergyLevel()<5&&parent.getEnergyLevel()>=0) {
+            parent.setEnergyLevel(5);
+        }
+
 
         Texture[] backObj = new Texture[12];
         backObj[0] = new Texture("active_background/back.jpg");

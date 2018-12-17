@@ -22,6 +22,8 @@ import com.badlogic.gdx.utils.JsonValue;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.InvocationTargetException;
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 
 import jdk.nashorn.internal.parser.JSONParser;
 
@@ -56,6 +58,9 @@ public class ReactionTimeClass extends Game {
 	private Array planetText;
 	private Array tutorialText;
 	public float VOLUME = 1f;
+	//TODO test 1712
+	private Timer timer;
+	private Timer.Task tTask;
 	
 	public ReactionTimeClass(ActionResolver actionResolver) {
 		this.actionResolver = actionResolver;
@@ -78,6 +83,8 @@ public class ReactionTimeClass extends Game {
 		camera.zoom = 1;
 		camera.update();
 		prefs = Gdx.app.getPreferences("gameData");
+		//TODO test 1712
+		timer = new Timer();
 		loadSavedElement();
 		setScreen(new LoadingScreen(this, camera));
 		setTexts();
@@ -142,6 +149,39 @@ public class ReactionTimeClass extends Game {
 	public Boolean getSettings(String name){
 		return prefs.getBoolean(name, true);
 	}
+
+	//TODO test 1712
+	public void setEnergyLevel(int energyLevel){
+		prefs.putInteger("energy_level",energyLevel);
+		prefs.flush();
+	}
+
+	//TODO test 1712
+	public int getEnergyLevel(){
+		return prefs.getInteger("energy_level");
+	}
+
+	//TODO test 1712
+	public void startRecoveryEnergy() {
+		Gdx.app.log("test3454", "количество энергии в startRecoveryEnergy = " + String.valueOf(getEnergyLevel()));
+
+		Timer.schedule(new Task() {
+			@Override
+			public void run() {
+				if(getEnergyLevel()>0 && getEnergyLevel()<5){
+					setEnergyLevel(getEnergyLevel()+1);
+					this.run();
+				}
+				else this.cancel();
+
+			}
+		}, 60f);
+	}
+
+
+
+
+
 
 	//возвращает флаг есть ли закрытые планеты
 	//true если есть
